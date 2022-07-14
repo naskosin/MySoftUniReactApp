@@ -1,4 +1,5 @@
 import styles from "./Register.module.css";
+import * as authService from '../services/authService'
 //import { useHandler } from "../hooks/useAuthValidateHandler";
 //const initialState  = { email: "", password: "", rePassword: "", form: true };
 //
@@ -15,27 +16,27 @@ const Register = () => {
   //const [error, setError, isFormValid] = useHandler(initialState);
   //let isCorrect = '';
 //
-  //const onRegister = (e) => {
-  //  e.preventDefault();
-  //  let formData = new FormData(e.currentTarget);
-  //  let email = formData.get("email");
-  //  let password = formData.get("password");
-  //  let rePassword = formData.get("rePassword");
-  //  if (password === rePassword) {
-  //    gameServices
-  //      .register(email, password)
-  //      .then((regData) => {
-  //     login(regData);
-  //      })
-  //      .catch((err) => {
-  //        notification(err);
-  //      });
-  //  } else {
-  //      notification("Error rePassword")
-  //   
-  //  }
+  const onRegister = (e) => {
+    e.preventDefault();
+    let formData = new FormData(e.currentTarget);
+    let email = formData.get("email");
+    let password = formData.get("password");
+    let rePassword = formData.get("rePassword");
+    if (password === rePassword) {
+authService
+        .register(email, password)
+        .then((regData) => {
+       console.log(regData);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      console.log("Error rePassword")
+     
+    }
   // 
-  //};
+ };
   return (
     <section id="register-container" className={styles.registercontainer}>
       <div className={styles.registercontainerinfo}>
@@ -45,7 +46,7 @@ const Register = () => {
         />
 
         <form
-        
+            onSubmit={onRegister}
           method="POST"
           className={styles.containertext}
         >
