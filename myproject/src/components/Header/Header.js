@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './Header.module.css'; 
 //import {Link} from 'react-router-dom';
 //import { notifyContext } from '../contexts/NotifyContext';
@@ -21,9 +22,11 @@ const Header =(
     <nav  id={styles.not__logged}>
     <ul>
       <li>
-        <p >Home</p>
+        <Link to="/">Home</Link>
       </li>
-
+      <li>
+        <Link to="/register">Register</Link>
+      </li>
       </ul>
   </nav>;
    
