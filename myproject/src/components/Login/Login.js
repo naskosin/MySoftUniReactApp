@@ -1,11 +1,11 @@
 import styles from "./Login.module.css";
 import * as authService from '../services/authService'
 //import { notifyContext } from "../contexts/NotifyContext";
-//const initialState  = { email: "", password: "", rePassword: "Filled" };
+//
 //import { authContext } from "../contexts/AuthContext";
 //import * as gameServices from "../services/gameServices";
-//import { useHandler } from "../hooks/useAuthValidateHandler";
-//import { useNavigate } from "react-router-dom";
+import { useValidateHandler } from "../../hooks/useAuthValidator";
+import { useNavigate } from "react-router-dom";
 //import { isNotAuth } from "../hoc/isAuth";
 
 
@@ -14,12 +14,12 @@ const Login = () => {
 // const { userInfo, login } = authContext();
 // const {errorNotification, notification } = notifyContext();
 //
+const initialState  = { email: "", password: "", rePassword: "Filled" };
+const [error, setError,  isFormValid] = useValidateHandler(initialState);
 //
-//onst [error, setError,  isFormValid] = useHandler(initialState);
 //
 //
-//
-// const navigate = useNavigate();
+ const navigate = useNavigate();
 
   const onLogin = (e) => {
     e.preventDefault();
@@ -32,7 +32,7 @@ const Login = () => {
     .then((authData) => {
       //login(authData);
       console.log(authData);
-      //navigate("/");
+     navigate("/");
     })
     .catch((err)=>{ console.log(err);  })
 
@@ -48,41 +48,42 @@ const Login = () => {
           alt="Loading..."
         />
 
-        <form onSubmit={onLogin} className={styles.containertext}>
+<form onSubmit={onLogin} className={styles.containertext}>
        
-          <h2>Login</h2>
-          <p className={styles.paragraph} >Welcome, see the new masterpieces!</p>
+       <h2>Login</h2>
+       <p className={styles.paragraph} >Welcome, see the new masterpieces!</p>
 
-          <label htmlFor="uses">Uses:</label>
-          <input
-            type="text"
-            id="uses"
-            placeholder="ivan_00"
-            name="email"
-           
-          />
-         
+       <label htmlFor="uses">Uses:</label>
+       <input
+         type="text"
+         id="uses"
+         placeholder="ivan_00"
+         name="email"
+         onBlur={setError}
+         className={error.email !== "Filled" && error.email  ? styles.inputerror : styles.input}
+       />
+       {error.email !== "Filled" && error.email ? <p id="errors">{error.email}</p> : ""}
 
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            placeholder="*****"
-            name="password"
-   
-   
-          />
-          
+       <label htmlFor="password">Password:</label>
+       <input
+         type="password"
+         id="password"
+         placeholder="*****"
+         name="password"
+         onBlur={setError}
+        className={error.password !== "Filled" && error.password ? styles.inputerror : styles.input}
+       />
+       {error.password !== "Filled" && error.password? <p className={styles.errorParagraph} >{error.password}</p> : ""}
 
-          <button  className={styles.button}>
-            Login
-          </button>
-          <div>
-            <p className={styles.paragraph}>
-              Don't have an account? <a href="/register">Sign up</a>.
-            </p>
-          </div>
-        </form>
+       <button disabled={!isFormValid} className={styles.button}>
+         Login
+       </button>
+       <div>
+         <p className={styles.paragraph}>
+           Don't have an account? <a href="/register">Sign up</a>.
+         </p>
+       </div>
+     </form>
       </div>
     </section>
   );

@@ -24,11 +24,11 @@
     font-size: 1.1rem;
 }
 .header>h1{
-    padding: 0;
+    padding: 10px;
    margin-top: 20px;
-    padding-left: 20px;
+    padding-left: 40px;
     font-size: 5rem;
- 
+    padding-right: 100px;
     text-align: left;
     color: lightskyblue;
     display: inline-block;
