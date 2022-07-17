@@ -1,5 +1,6 @@
 import styles from "./Register.module.css";
-import * as authService from '../services/authService'
+import * as authService from "../../services/authService";
+
 //import { useHandler } from "../hooks/useAuthValidateHandler";
 //const initialState  = { email: "", password: "", rePassword: "", form: true };
 //

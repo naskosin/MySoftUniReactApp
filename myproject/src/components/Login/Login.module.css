@@ -14,7 +14,7 @@
     width: 70%;
     height: 80%;
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 50% 50%;
     place-items: center;
     line-height: 1.5;
    margin: 0 auto;
@@ -22,6 +22,7 @@
     border-style: solid;
     border-color: lightskyblue;
     border-radius: 25px;
+    background-color: lightskyblue;
 }
 
 .container>img {
@@ -36,6 +37,7 @@
 
 .containertext {
     padding: 10px;
+   
         text-align: center;
         width: 60%
 }
