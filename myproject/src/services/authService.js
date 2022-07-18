@@ -49,3 +49,19 @@ export async function register(email, password){
    
    
    };
+
+   export  function loginOut(token){
+   return fetch(`${apiUrl}/logout`, {
+       method: 'GET',
+       headers: {
+         'content-type': 'applications/json',
+         'X-Authorization' : token,
+       }
+    
+      
+     })
+
+   
+   
+   
+   };

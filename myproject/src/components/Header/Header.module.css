@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Lobster&family=Playball&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Lobster&family=Playball&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akronim&family=Dancing+Script:wght@700&family=Lobster&display=swap');
+
 .header{
     width: 100%;
-    border-bottom: solid 3px white;
+    border-bottom: solid 3px lightskyblue;
     background-image: url('../../../public/assets/bedrefiskeutstyr-no duo spearhead ryuki wobbler til ørret trout fiske ørret maximus ultimatum.jpg');
-    background-size:fill ;
+    background-size: fill;
     display: inline-block;
     
     position: fixed;
@@ -27,7 +28,7 @@
     padding: 10px;
    margin-top: 20px;
     padding-left: 40px;
-    font-size: 5rem;
+    font-size: 6rem;
     padding-right: 100px;
     text-align: left;
     color: lightskyblue;
@@ -57,7 +58,7 @@
 }
 
 h1, h2, h3, h4{
-    font-family: Playball, serif;
+    font-family:Dancing Script, serif;
 }
 .username{border-radius: 20px;
     position: absolute;

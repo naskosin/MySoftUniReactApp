@@ -2,14 +2,15 @@ import styles from "./Login.module.css";
 import * as authService from "../../services/authService";
 //import { notifyContext } from "../contexts/NotifyContext";
 //
-//import { authContext } from "../contexts/AuthContext";
+import { useAuthContext } from "../../contexts/AuthContext";
 //import * as gameServices from "../services/gameServices";
 import { useValidateHandler } from "../../hooks/useAuthValidator";
 import { useNavigate } from "react-router-dom";
+
 //import { isNotAuth } from "../hoc/isAuth";
 
 const Login = () => {
-  // const { userInfo, login } = authContext();
+   const {  login } =useAuthContext();
   // const {errorNotification, notification } = notifyContext();
   //
   const initialState = { email: "", password: "", rePassword: "Filled" };
@@ -29,7 +30,7 @@ const Login = () => {
     authService
       .login(email, password)
       .then((authData) => {
-        //login(authData);
+        login(authData);
         console.log(authData);
         navigate("/");
       })

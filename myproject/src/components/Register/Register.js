@@ -7,12 +7,13 @@ import * as authService from "../../services/authService";
 //import { isNotAuth } from "../hoc/isAuth";
 //
 //import { useContext } from "react";
-//import { AuthContext } from "../contexts/AuthContext";
+import { useAuthContext} from "../../contexts/AuthContext";
+
 //import * as gameServices from "../services/gameServices";
 //import { notifyContext } from "../contexts/NotifyContext";
 
 const Register = () => {
-  //const { login } = useContext(AuthContext);
+ const { login } = useAuthContext();
   //const { errorNotification, notification } = notifyContext();
   //const [error, setError, isFormValid] = useHandler(initialState);
   //let isCorrect = '';
@@ -27,7 +28,7 @@ const Register = () => {
 authService
         .register(email, password)
         .then((regData) => {
-       console.log(regData);
+     login(regData);
         })
         .catch((err) => {
           console.log(err);
@@ -36,7 +37,7 @@ authService
       console.log("Error rePassword")
      
     }
-  // 
+
  };
   return (
     <section id="register-container" className={styles.registercontainer}>

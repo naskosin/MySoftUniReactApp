@@ -1,4 +1,6 @@
 import Header from './components/Header/Header';
+import  {AuthProvider}  from './contexts/AuthContext';
+
 import Login from './components/Login/Login';
 import { Home } from './components/Home/Home';
 import Register from './components/Register/Register';
@@ -7,6 +9,7 @@ import './App.css';
 
 function App() {
   return (
+    <AuthProvider>
     <div >
       
       <Header />
@@ -20,7 +23,9 @@ function App() {
       </main>
    
     </div>
+    </AuthProvider>
   );
+ 
 }
 
 export default App;
