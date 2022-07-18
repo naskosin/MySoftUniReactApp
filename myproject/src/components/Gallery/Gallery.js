@@ -1,7 +1,7 @@
 import styles from './gallery.module.css';
 import {useEffect, useState} from 'react';
 import GalleryItem from './GalleryItem';
-import * as baitServices from '../services/baitServices';
+import * as baitServices from '../../services/baitService';
 
 const Gallery = ()=>{
   const [baits, setBaits] = useState([]);
