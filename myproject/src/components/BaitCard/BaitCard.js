@@ -1,4 +1,4 @@
-import styles from './galleryitem.module.css';
+import styles from './BaitCard.module.css';
 import { useParams, match } from 'react-router-dom';
 import {Link} from 'react-router-dom';
 import { useAuthContext } from '../../contexts/AuthContext';
@@ -21,4 +21,4 @@ const BaitCard = ({bait})=>{
     );
 
 };
-export default GalleryItem;
+export default BaitCard;

@@ -1,6 +1,6 @@
 import styles from './Gallery.module.css';
 import {useEffect, useState} from 'react';
-import {}
+import BaitCard from '../BaitCard/BaitCard';
 import * as baitServices from '../../services/baitService';
 
 const Gallery = ()=>{
@@ -43,14 +43,14 @@ const Gallery = ()=>{
   <section className={styles.section__second}>
     <div >
       <ul>
-       { baits ? "" 
-    //   (baits.length>0 ? baits.map(x=><GalleryItem bait={x} key={x._id}/>)
-    //  :   <div className="no_fishes" >
-    //  <p>
-    //    <span>Ooops!</span> There's no fishes in the dock. Change your bait and
-    //    try again!
-    //  </p>
-    //</div>) 
+       { baits ? 
+       (baits.length>0 ? baits.map(x=><BaitCard bait={x} key={x._id}/>)
+      :   <div className="no_fishes" >
+      <p>
+        <span>Ooops!</span> There's no fishes in the dock. Change your bait and
+        try again!
+      </p>
+    </div>) 
      : <p>Loading...</p>
       
       }
