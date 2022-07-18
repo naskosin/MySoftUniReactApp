@@ -24,9 +24,9 @@ let loggedNavigation =
   <li>
     <Link to="/">Home</Link>
   </li>
-  {/* <li> */}
-    {/* <Link to="/gallery">Gallery</Link> */}
-  {/* </li> */}
+  <li>
+    <Link to="/gallery">Gallery</Link>
+  </li>
   {/* <li> */}
     {/* <Link to="/create">Create catch</Link> */}
   {/* </li> */}
@@ -57,9 +57,9 @@ let loggedNavigation =
    <li>
    <Link  to="/login">Login</Link>
    </li>
-   {/* <li> */}
-   {/* <Link  to="/gallery">Gallery</Link> */}
-   {/* </li> */}
+   <li>
+   <Link  to="/gallery">Gallery</Link>
+   </li>
 {/*  */}
    {/* <li> */}
      {/* <Link to="/gallery/catch/topFive">Top 5</Link> */}
