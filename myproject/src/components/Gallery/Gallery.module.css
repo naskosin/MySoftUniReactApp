@@ -21,7 +21,8 @@ main{
  }
 .main{
     margin: 40px 0;
-     display: inline-block;
+     display: grid;
+     grid-template-columns: 50% 50%;
      background-color: white;
      border-radius: 50px;
  }
@@ -78,7 +79,7 @@ object-fit: cover;
 .main__img__wrapper{
     height:100%;
     margin:0 ;
-    width:50%;
+    width:100%;
     overflow: hidden;
     display: inline-block;
     border-radius: 50px;
@@ -91,7 +92,7 @@ object-fit: cover;
     
 }
 .main h1{font-size: 2rem;
-    line-height: 5;
+    
     text-align: center;
     font-weight: 600;
    padding: 0;
@@ -99,7 +100,7 @@ object-fit: cover;
    margin-right: 2px;
     margin-left: 80px;
 }
-.main>p{
+.main p{
     display: inline-block;
     width: 80%;
     margin-top: 0px;
@@ -108,7 +109,7 @@ object-fit: cover;
 }
 .main__div{
     display:inline-block;
-    width:30%;
+    width:80%;
     height: 100%;
     vertical-align: top;
     background-color: white;

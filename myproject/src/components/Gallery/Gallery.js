@@ -24,7 +24,7 @@ const Gallery = ()=>{
     <div className={styles.main__img__wrapper}>
       <img
         className={styles.main__img}
-        src="assets/4.jpg"
+        src="assets/15.jpg"
         alt="No picture"
       />
     </div>

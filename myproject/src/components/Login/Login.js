@@ -1,5 +1,6 @@
 import styles from "./Login.module.css";
 import * as authService from "../../services/authService";
+import { isNotAuth } from "../../guards/isNotAuth";
 //import { notifyContext } from "../contexts/NotifyContext";
 //
 import { useAuthContext } from "../../contexts/AuthContext";
@@ -99,4 +100,4 @@ const Login = () => {
     </section>
   );
 };
-export default Login;
+export default isNotAuth(Login);
