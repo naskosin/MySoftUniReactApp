@@ -1,18 +1,17 @@
 import styles from "./Register.module.css";
 import * as authService from "../../services/authService";
-
+import { isNotAuth } from "../../guards/isNotAuth";
 //import { useHandler } from "../hooks/useAuthValidateHandler";
-//const initialState  = { email: "", password: "", rePassword: "", form: true };
-//
-//import { isNotAuth } from "../hoc/isAuth";
-//
-//import { useContext } from "react";
+
+
+
 import { useAuthContext} from "../../contexts/AuthContext";
 
 //import * as gameServices from "../services/gameServices";
 //import { notifyContext } from "../contexts/NotifyContext";
 
 const Register = () => {
+  const initialState  = { email: "", password: "", rePassword: "", form: true };
  const { login } = useAuthContext();
   //const { errorNotification, notification } = notifyContext();
   //const [error, setError, isFormValid] = useHandler(initialState);
@@ -93,4 +92,4 @@ authService
     </section>
   );
 };
-export default Register ;
+export default isNotAuth(Register) ;
