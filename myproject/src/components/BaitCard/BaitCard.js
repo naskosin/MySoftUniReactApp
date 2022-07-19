@@ -1,5 +1,5 @@
 import styles from './BaitCard.module.css';
-import { useParams, match } from 'react-router-dom';
+
 import {Link} from 'react-router-dom';
 import { useAuthContext } from '../../contexts/AuthContext';
 

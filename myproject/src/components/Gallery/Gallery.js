@@ -25,7 +25,7 @@ const Gallery = ()=>{
       <img
         className={styles.main__img}
         src="assets/15.jpg"
-        alt="No picture"
+        alt="Loading..."
       />
     </div>
     <div className={styles.main__div}>
