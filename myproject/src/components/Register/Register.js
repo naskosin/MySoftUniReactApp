@@ -1,7 +1,7 @@
 import styles from "./Register.module.css";
 import * as authService from "../../services/authService";
 import { isNotAuth } from "../../guards/isNotAuth";
-//import { useHandler } from "../hooks/useAuthValidateHandler";
+import { useValidateHandler } from "../../hooks/useAuthValidator";
 
 
 
@@ -14,7 +14,7 @@ const Register = () => {
   const initialState  = { email: "", password: "", rePassword: "", form: true };
  const { login } = useAuthContext();
   //const { errorNotification, notification } = notifyContext();
-  //const [error, setError, isFormValid] = useHandler(initialState);
+const [error, setError, isFormValid] = useValidateHandler(initialState);
   //let isCorrect = '';
 //
   const onRegister = (e) => {
@@ -55,9 +55,9 @@ authService
           <p>Register to get ideas and view the latest masterpieces.</p>
 
           <label for="username">Username:</label>
-          <input type="text" id="username" placeholder="ivan_00" name="email" 
-          className={styles.input}/>
-
+          <input type="text" id="username" placeholder="ivan_00" name="email" onBlur={setError} 
+          className={error.email !== "Filled" && error.email ? styles.inputerror : styles.input}/>
+          {error.email !== "Filled" && error.email ? <p id="errors">{error.email}</p> : ""}
           
           <label for="password">Password:</label>
           <input
@@ -65,10 +65,10 @@ authService
             id="password"
             placeholder="*****"
             name="password"
-        
-            className={ styles.input}
+            onBlur={setError}
+            className={error.password !== "Filled" && error.password ? styles.inputerror : styles.input}
           />
-
+ {error.password !== "Filled" && error.password ? <p className={styles.errorParagraph} >{error.password}</p> : ""}
 
           <label for="re-password">Repeat password:</label>
           <input
@@ -76,12 +76,12 @@ authService
             id="rePassword"
             placeholder="*****"
             name="rePassword"
-    
-        
+            onBlur={setError}
+            className={error.rePassword !== "Filled" && error.email.rePassword ? styles.inputerror : styles.input}
           />
+ {error.rePassword !== "Filled" && error.email.rePassword ? <p className={styles.errorParagraph} >{error.rePassword}</p> : ""}
 
-
-          <button  className= {styles.button} >Register</button>
+          <button disabled={!isFormValid} className= {styles.button} >Register</button>
           <div className={styles.cardnoaccount}>
             <p>
               Already have an account?<a href="/login">Sign in</a> 
