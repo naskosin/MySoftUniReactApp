@@ -18,7 +18,7 @@
     color: rgb(234, 16, 162);
     font-family: Lobster, sans-serif;
     letter-spacing: 1px;
-    padding: 3px;
+    padding: 8px;
     font-style: italic;
     text-decoration: none;
     font-weight: bold;
@@ -55,6 +55,7 @@
     border-radius: 4px;
     background-color: lightskyblue;
     border-top-left-radius: 30px; 
+    border-bottom-right-radius: 30px;
 }
 
 h1, h2, h3, h4{
