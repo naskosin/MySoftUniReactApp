@@ -46,12 +46,13 @@ const Gallery = ()=>{
        { baits ? 
        (baits.length>0 ? baits.map(x=><BaitCard bait={x} key={x._id}/>)
       :   <div className="no_fishes" >
-      <p>
-        <span>Ooops!</span> There's no fishes in the dock. Change your bait and
-        try again!
-      </p>
+        <p>Loading...</p>
+   
     </div>) 
-     : <p>Loading...</p>
+     :    <p>
+     <span>Ooops!</span> There's no fishes in the dock. Change your bait and
+     try again!
+   </p>
       
       }
       </ul>

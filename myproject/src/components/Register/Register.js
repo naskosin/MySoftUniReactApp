@@ -52,12 +52,12 @@ authService
           className={styles.containertext}
         >
           <h2>Register</h2>
-          <p>Register to get ideas and view the latest masterpieces.</p>
+          <p className={styles.paragraph}>Register to get ideas and view the latest masterpieces.</p>
 
           <label for="username">Username:</label>
           <input type="text" id="username" placeholder="ivan_00" name="email" onBlur={setError} 
           className={error.email !== "Filled" && error.email ? styles.inputerror : styles.input}/>
-          {error.email !== "Filled" && error.email ? <p id="errors">{error.email}</p> : ""}
+          {error.email !== "Filled" && error.email ? <p className={styles.errorParagraph}>{error.email}</p> : ""}
           
           <label for="password">Password:</label>
           <input
@@ -83,7 +83,7 @@ authService
 
           <button disabled={!isFormValid} className= {styles.button} >Register</button>
           <div className={styles.cardnoaccount}>
-            <p>
+            <p className={styles.paragraph}>
               Already have an account?<a href="/login">Sign in</a> 
             </p>
           </div>
