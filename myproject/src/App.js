@@ -2,6 +2,7 @@ import Header from './components/Header/Header';
 import  {AuthProvider}  from './contexts/AuthContext';
 import Create from './components/Create/Create';
 import Gallery from './components/Gallery/Gallery';
+import Edit from './components/Edit/Edit';
 import Details from './components/Details/Details';
 import Login from './components/Login/Login';
 import { Home } from './components/Home/Home';
@@ -24,6 +25,7 @@ function App() {
     <Route path="/login" element={<Login/>}/>
     <Route path="/gallery" element = {<Gallery/>}/>
     <Route path="/gallery/:baitId" element = {<Details/>}/>
+    <Route path="gallery/edit/:baitId" element = {<Edit/>}/>
   </Routes>
       </main>
    

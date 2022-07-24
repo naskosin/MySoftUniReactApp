@@ -7,7 +7,7 @@ export const useHandler = (initalState) => {
     console.log(field);
     if (field === "species") {
       let species = e.currentTarget.value;
-      if (species.length == 0) {
+      if (species.length === 0) {
         setError((state) => ({ ...state, species: "Species is required!" }));
         console.log("Hi");
       }
@@ -22,7 +22,7 @@ export const useHandler = (initalState) => {
       let bait = e.currentTarget.value;
       console.log(bait);
       
-      if (bait.length == 0) {
+      if (bait.length === 0) {
         setError((state) => ({ ...state, bait: "Bait is required!" }));
         console.log("Hi");
       }
@@ -37,7 +37,7 @@ export const useHandler = (initalState) => {
     
     else  if(field==="img"){
         let img = e.currentTarget.value;
-    if (img.length == 0) {
+    if (img.length === 0) {
      setError((state) => ({ ...state, img: "Image is required" }));
      console.log("Hi");
    } else if (!img.match(/(http:|https:)+[^\s]+[\w]/)) {
@@ -51,7 +51,7 @@ export const useHandler = (initalState) => {
     else if (field === "story") {
         let story = e.currentTarget.value;
         console.log(story);
-        if (story.length == 0) {
+        if (story.length === 0) {
           setError((state) => ({ ...state, story: "Password required!" }));
         } else {
           setError((state) => ({ ...state, story: "Filled" }));
@@ -60,7 +60,7 @@ export const useHandler = (initalState) => {
       }else if (field === "weight") {
         let weight = e.currentTarget.value;
         console.log(weight);
-        if (weight.length == 0) {
+        if (weight.length === 0) {
           setError((state) => ({ ...state, weight: "Password required!" }));
         } else {
           setError((state) => ({ ...state, weight: "Filled" }));
@@ -69,6 +69,6 @@ export const useHandler = (initalState) => {
       }
       
   };
-  let isFormValid = error.species =="Filled"  && error.bait== "Filled" && error.img== "Filled" && error.story== "Filled" && error.weight== "Filled" 
+  let isFormValid = error.species ==="Filled"  && error.bait=== "Filled" && error.img=== "Filled" && error.story=== "Filled" && error.weight=== "Filled" 
   return [error, setItem, isFormValid];
 };

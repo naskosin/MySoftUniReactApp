@@ -27,9 +27,9 @@ let loggedNavigation =
   <li>
     <Link to="/gallery">Gallery</Link>
   </li>
-  {/* <li> */}
-    {/* <Link to="/create">Create catch</Link> */}
-  {/* </li> */}
+  <li>
+    <Link to="/create">Post bait</Link>
+  </li>
   <li>
   
   < a href ="/#" onClick = {logOut}>Logout</a>

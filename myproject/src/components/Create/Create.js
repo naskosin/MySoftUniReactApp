@@ -3,7 +3,7 @@ import * as baitService from '../../services/baitService';
 import styles from './Create.module.css';
 import { Navigate } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthContext";
-import { useHandler } from "../hooks/useCreateEditValidator";
+import { useHandler } from "../../hooks/useCreateEditValidator";
 import { useNavigate } from "react-router-dom";
 const initialState = { species: "", weight: "", bait: "", img: "", story: "" };
 
@@ -25,7 +25,7 @@ const create=(e)=>{
 const {species, bait, img, story, weight} = Object.fromEntries(new FormData(e.currentTarget));
 let petData = {species, bait, img, story, weight}
 console.log(petData)
-gameServices.createOne(token, petData)
+baitService.createOne(token, petData)
 
 .then(data=>{console.log(data)
     navigate('/gallery/0e68a98c-3d56-4d3d-9d9f-256ae02a41b8')})

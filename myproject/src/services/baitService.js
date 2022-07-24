@@ -11,6 +11,22 @@ export function getAllBaits(){
       .then(res=>res.json())
     
   }
+  export async function createOne(token, petData){
+    let res = await fetch('https://nasko-fish.herokuapp.com/data/fishes', {
+       method: 'POST',
+       headers: {
+         'content-type': 'applications/json',
+         'X-Authorization' : token,
+         
+       },
+       body: JSON.stringify(petData)
+     });
+     let result = await res.json();
+     return result;
+    };
+
+
+
 
 
 async function resulter(res){
