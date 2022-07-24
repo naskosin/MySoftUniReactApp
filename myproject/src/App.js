@@ -1,5 +1,6 @@
 import Header from './components/Header/Header';
 import  {AuthProvider}  from './contexts/AuthContext';
+import Create from './components/Create/Create';
 import Gallery from './components/Gallery/Gallery';
 import Details from './components/Details/Details';
 import Login from './components/Login/Login';
@@ -19,6 +20,7 @@ function App() {
   <Routes>
     <Route path="/" element={<Home/>}/>
     <Route path="/register" element={<Register/>}/>
+    <Route path="/create" element={<Create/>}/>
     <Route path="/login" element={<Login/>}/>
     <Route path="/gallery" element = {<Gallery/>}/>
     <Route path="/gallery/:baitId" element = {<Details/>}/>

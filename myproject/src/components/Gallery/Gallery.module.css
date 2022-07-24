@@ -129,6 +129,11 @@ object-fit: cover;
 p{
     font-family: Lobster, sans-serif;
   }
+
+
+  .loading{
+      font-size: 3rem;
+  }
   @media only screen and (max-width: 600px) {
     body {
       background-color: lightblue;

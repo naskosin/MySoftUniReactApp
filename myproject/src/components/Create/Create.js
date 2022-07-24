@@ -1,14 +1,14 @@
-import { isAuth } from "../hoc/isAuth";
-import * as gameServices from '../services/gameServices';
-import styles from './create.module.css';
+import { isAuth } from "../../guards/isNotAuth";
+import * as baitService from '../../services/baitService';
+import styles from './Create.module.css';
 import { Navigate } from "react-router-dom";
-import { authContext } from "../contexts/AuthContext";
+import { useAuthContext } from "../../contexts/AuthContext";
 import { useHandler } from "../hooks/useCreateEditValidator";
 import { useNavigate } from "react-router-dom";
 const initialState = { species: "", weight: "", bait: "", img: "", story: "" };
 
 const Create = () =>{
-    const {userInfo} = authContext();
+    const {userInfo} = useAuthContext();
     const [error, setError, isFormValid] = useHandler(initialState);
     let navigate = useNavigate();
     console.log(error.species)
