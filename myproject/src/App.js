@@ -2,6 +2,7 @@ import Header from './components/Header/Header';
 import  {AuthProvider}  from './contexts/AuthContext';
 import Create from './components/Create/Create';
 import Gallery from './components/Gallery/Gallery';
+import Contacts from './components/Contacts/Contacts';
 import Edit from './components/Edit/Edit';
 import Details from './components/Details/Details';
 import PageNotFound from './components/PageNotFound/PageNotFound'
@@ -27,6 +28,7 @@ function App() {
     <Route path="/gallery" element = {<Gallery/>}/>
     <Route path="/gallery/:baitId" element = {<Details/>}/>
     <Route path="*" element = {<PageNotFound/>}/>
+    <Route path="/contacts" element={<Contacts/>}/>
     <Route path="gallery/edit/:baitId" element = {<Edit/>}/>
   </Routes>
       </main>

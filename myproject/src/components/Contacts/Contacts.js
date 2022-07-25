@@ -36,3 +36,4 @@ return (
   </article>
 </section>)
 }
+export default Contacts;
