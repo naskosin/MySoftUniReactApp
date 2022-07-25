@@ -25,7 +25,19 @@ export function getAllBaits(){
      return result;
     };
 
-
+    export async function editOneBait(token, petData){
+      let res = await fetch('https://nasko-fish.herokuapp.com/data/fishes', {
+         method: 'POST',
+         headers: {
+           'content-type': 'applications/json',
+           'X-Authorization' : token,
+           
+         },
+         body: JSON.stringify(petData)
+       });
+       let result = await res.json();
+       return result;
+      };
 
 
 

@@ -4,6 +4,7 @@ import Create from './components/Create/Create';
 import Gallery from './components/Gallery/Gallery';
 import Edit from './components/Edit/Edit';
 import Details from './components/Details/Details';
+import PageNotFound from './components/PageNotFound/PageNotFound'
 import Login from './components/Login/Login';
 import { Home } from './components/Home/Home';
 import Register from './components/Register/Register';
@@ -25,6 +26,7 @@ function App() {
     <Route path="/login" element={<Login/>}/>
     <Route path="/gallery" element = {<Gallery/>}/>
     <Route path="/gallery/:baitId" element = {<Details/>}/>
+    <Route path="*" element = {<PageNotFound/>}/>
     <Route path="gallery/edit/:baitId" element = {<Edit/>}/>
   </Routes>
       </main>

@@ -26,7 +26,7 @@ const Edit = () => {
     );
     let petData = { species, bait, img, story, weight };
     console.log(petData);
- baitService.editOne(token, petData, baitId).then(data=>console.log(data));
+ baitService.editOneBait(token, petData, baitId).then(data=>console.log(data));
  navigate(`/gallery/${baitId}`)
   };
   useEffect(() => {
