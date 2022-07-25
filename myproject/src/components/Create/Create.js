@@ -1,4 +1,4 @@
-import { isAuth } from "../../guards/isNotAuth";
+import { isAuth } from "../../guards/isAuth";
 import * as baitService from "../../services/baitService";
 import styles from "./Create.module.css";
 import { Navigate } from "react-router-dom";

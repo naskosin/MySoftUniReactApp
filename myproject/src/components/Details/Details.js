@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { isAuth } from "../../guards/isAuth";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styles from "./Details.module.css";
@@ -102,4 +103,4 @@ const Details = () => {
     </>
   );
 };
-export default Details;
+export default isAuth(Details);
