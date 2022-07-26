@@ -52,7 +52,7 @@ export const useHandler = (initalState) => {
         let story = e.currentTarget.value;
         console.log(story);
         if (story.length === 0) {
-          setError((state) => ({ ...state, story: "Password required!" }));
+          setError((state) => ({ ...state, story: "Story required!" }));
         } else {
           setError((state) => ({ ...state, story: "Filled" }));
           
@@ -61,7 +61,7 @@ export const useHandler = (initalState) => {
         let weight = e.currentTarget.value;
         console.log(weight);
         if (weight.length === 0) {
-          setError((state) => ({ ...state, weight: "Password required!" }));
+          setError((state) => ({ ...state, weight: "Weight required!" }));
         } else {
           setError((state) => ({ ...state, weight: "Filled" }));
       

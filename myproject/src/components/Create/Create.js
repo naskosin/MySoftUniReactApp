@@ -1,7 +1,6 @@
 import { isAuth } from "../../guards/isAuth";
 import * as baitService from "../../services/baitService";
 import styles from "./Create.module.css";
-import { Navigate } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthContext";
 import { useHandler } from "../../hooks/useCreateEditValidator";
 import { useNavigate } from "react-router-dom";
@@ -36,7 +35,7 @@ const Create = () => {
 
   return (
     <div className={styles.createcontainerinfo}>
-      <img src="/assets/01-azores-fishing.jpg" alt="image" />
+      <img src="/assets/01-azores-fishing.jpg" alt="Loading..." />
 
       <form className={styles.containertext} onSubmit={create}>
         <h2>Create Catch</h2>

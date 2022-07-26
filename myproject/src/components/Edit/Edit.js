@@ -2,7 +2,7 @@
 import * as baitService from "../../services/baitService";
 import styles from "./Edit.module.css";
 import { useHandler } from "../../hooks/useCreateEditValidator";
-
+import { isOwner } from "../../guards/isNotAuth";
 
 import { useParams } from "react-router-dom";
 import { useState } from "react";
@@ -39,7 +39,7 @@ const Edit = () => {
       });
   }, []);
 
-  console.log(bait);
+let baitd = bait._id;
 
   return (
     <div className={styles.createcontainerinfo}>
@@ -151,11 +151,14 @@ const Edit = () => {
           ""
         )}
 
-        <button disabled={error.isFormValid} className={styles.button}>
+        <button disabled={!isFormValid} className={styles.button}>
           Edit article
         </button>
       </form>
     </div>
   );
 };
-export default Edit;
+
+
+
+export default isOwner(Edit);
