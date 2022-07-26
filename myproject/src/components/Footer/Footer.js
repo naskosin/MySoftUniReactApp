@@ -18,8 +18,8 @@ const Footer = () =>{
         </li>
     </ul></nav>
     <ul>
-    <li><i class="fa-solid fa-fish"></i><Link className={styles.footer__a} to="/">About</Link></li>
-    <li><i class="fa-solid fa-fish"></i><Link className={styles.footer__a} to="/contacts">Contacts</Link></li>
+    <li className={styles.footer__li}><i class="fa-solid fa-fish"></i><Link className={styles.footer__a} to="/about">About</Link></li>
+    <li className={styles.footer__li}><i class="fa-solid fa-fish"></i><Link className={styles.footer__a} to="/contacts">Contacts</Link></li>
     
 </ul>
 </footer>
