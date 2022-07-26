@@ -20,7 +20,7 @@ footer {
   width: 100px;
 }
 footer ul {
-  margin-left: 250px;
+ 
   margin-top: 10px;
   padding: 10px;
   list-style-type: none;
@@ -42,7 +42,7 @@ footer ul {
 }
 .footer__a {
   padding: 2px;
-  color: white;
+  color: #7bb6da;
 }
 
 .description__p {
