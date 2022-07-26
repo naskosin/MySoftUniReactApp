@@ -33,15 +33,7 @@ ul{
     
 }
 
-li{
-    text-align: center;
-    display: inline-block;
-    margin:0 0 30px 40px;
-    border-radius: 4px;
-    background-color: lightskyblue;
-    border-top-left-radius: 30px;   
 
-}
 
 .article__button{
     margin: 0 auto;

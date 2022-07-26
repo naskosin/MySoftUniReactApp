@@ -1,4 +1,4 @@
-import styles from './footer.module.css';
+import styles from './Footer.module.css';
 import { Link } from 'react-router-dom';
 
 const Footer = () =>{
@@ -6,20 +6,20 @@ const Footer = () =>{
         <footer >
   
     <div className={styles.description}>
-        <img className={styles.footer__img}  src="assets/800px_COLOURBOX10756422.jpg" alt="" />
-        <p className={styles.description__paragraph}>Spinning is one of the most widespread and popular techniques around the world that can be done in both saltwater and freshwater.</p>
+        <img className={styles.footer__img}  src="assets/61.jpg" alt="" />
+        <p className={styles.description__p}>Spinning is one of the most widespread and popular techniques around the world for that can be done in both saltwater and freshwater.</p>
     </div>
     <nav><ul className={styles.description__ul}>
-        <li><i class="fab fa-facebook"></i><a href="https://www.facebook.com/groups/262191725221158">Facebook</a>
+        <li className={styles.footer__li} ><i class="fab fa-facebook"></i><a  className={styles.footer__a}  href="https://www.facebook.com/groups/262191725221158">Facebook</a>
         </li>
-        <li><i class="fab fa-twitter"></i><a href="https://twitter.com">Twitter</a>
+        <li className={styles.footer__li}><i class="fab fa-twitter"></i><a  className={styles.footer__a}  href="https://twitter.com">Twitter</a>
         </li>
-        <li><i class="fab fa-instagram"></i><a href="https://instagram.com">Instagram</a>
+        <li className={styles.footer__li}><i class="fab fa-instagram"></i><a className={styles.footer__a}   href="https://instagram.com">Instagram</a>
         </li>
     </ul></nav>
     <ul>
-    <li><i class="far fa-fish"></i><Link to="/">About</Link></li>
-    <li><i class="far fa-fish"></i><Link to="/">Contacts</Link></li>
+    <li><i class="fa-solid fa-fish"></i><Link className={styles.footer__a} to="/">About</Link></li>
+    <li><i class="fa-solid fa-fish"></i><Link className={styles.footer__a} to="/contacts">Contacts</Link></li>
     
 </ul>
 </footer>

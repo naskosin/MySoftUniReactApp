@@ -7,7 +7,7 @@ const BaitCard = ({bait})=>{
     const {userInfo} = useAuthContext();
  
     return (
-<li><article>
+<li className={styles.baitcard__li}><article>
     <div className={styles.articleimgwrapper}>
     <img className={styles.articleimg} src={bait.img} alt=""/></div>
     

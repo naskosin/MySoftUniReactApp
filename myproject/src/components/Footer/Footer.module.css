@@ -1,45 +1,59 @@
-footer{
-    width: 100%;
+footer {
+  width: 100%;
   text-align: justify;
   justify-content: space-between;
-    background-color: lightskyblue;
-      display: grid;
-      
-      /* background-image: url('/assets/2300x1380-13.jpg'); */
-   grid-template-columns: 1fr 1fr 1fr;
-   background-color: lightskyblue;
+  background-color: lightskyblue;
+  display: grid;
+ justify-items: center;
+
+  background-image: url('../../../public/assets/bedrefiskeutstyr-no duo spearhead ryuki wobbler til ørret trout fiske ørret maximus ultimatum.jpg'); 
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: lightskyblue;
+  margin-bottom: 0;
+  /* border-top: solid 3px lightyellow; */
+  color: white;
+}
+
+.footer__img {
+  float: left;
+  height: 60px;
+  width: 100px;
+}
+footer ul {
+  margin-left: 250px;
+  margin-top: 10px;
+  padding: 10px;
+  list-style-type: none;
+  color: white;
   
-   border-top: solid 3px lightyellow;
-   color:white;
-   box-sizing: border-box;
-  
-  
-  }
-  
-  .footer__img{
-      float: left;
-      height:60px;
-      width:100px
-  }
-  .footer__ul{
-    margin-left: 250px;
-    padding: 10px;
-    list-style-type: none;
-   
-  }
-  footer li, a{
-    padding: 2px;color:white;
-  }
-  .description__paragraph{
-    padding-top: 10px;
-    padding-left:10px;
-    vertical-align:bottom;
-    text-indent: 10px;
-    margin-left: 10px;
-  
-  }
-  .description__img{
-    margin-left: 10px;
-    margin-top: 15px;
-    margin-right: 5px;
-  }
+}
+.footer__li
+ {
+  padding: 5px;
+    color:aliceblue;
+  margin: 1 1
+   ;
+  display: list-item;
+  list-style-type: none;
+  text-align: left;
+  border:none
+
+
+}
+.footer__a {
+  padding: 2px;
+  color: white;
+}
+
+.description__p {
+  padding-top: 10px;
+  padding-left: 10px;
+  vertical-align: bottom;
+  text-indent: 10px;
+  margin-left: 10px;
+}
+.description img {
+  margin-left: 10px;
+  margin-top: 15px;
+  margin-right: 5px;
+}

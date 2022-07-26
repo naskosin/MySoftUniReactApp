@@ -1,5 +1,6 @@
 import Header from './components/Header/Header';
 import  {AuthProvider}  from './contexts/AuthContext';
+import Footer from './components/Footer/Footer';
 import Create from './components/Create/Create';
 import Gallery from './components/Gallery/Gallery';
 import Contacts from './components/Contacts/Contacts';
@@ -29,10 +30,11 @@ function App() {
     <Route path="/gallery/:baitId" element = {<Details/>}/>
     <Route path="*" element = {<PageNotFound/>}/>
     <Route path="/contacts" element={<Contacts/>}/>
+    
     <Route path="gallery/edit/:baitId" element = {<Edit/>}/>
   </Routes>
       </main>
-   
+   <Footer/>
     </div>
     </AuthProvider>
   );
