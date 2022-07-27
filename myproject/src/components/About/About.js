@@ -8,7 +8,7 @@ return(
     <div className={styles.top__img__wrapper}>
         <img src="assets/Ontario-brook-trout-1920x1280.jpeg" alt=""/>
     </div>
-  <article >
+  <article className={styles.about__article} >
       <h1>About Us</h1>
     <p>
       It was close to 10 p.m. William Breasette had already packed up his

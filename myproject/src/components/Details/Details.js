@@ -31,6 +31,19 @@ const Details = () => {
       setBait(res);
     });
   }, []);
+
+  const createYourComment = (e) => {
+    e.preventDefault();
+    let { comment } = Object.fromEntries(new FormData(e.currentTarget));
+
+    let text = { comment, email, baitId };
+    commentService
+      .createComment(token, text)
+      .then((res) => commentsState((state) => [...state, res]));
+      e.target.reset();
+  };
+
+
  // const editComment = (e, id) => {
  //   e.preventDefault();
  //   let { comment } = Object.fromEntries(new FormData(e.currentTarget));
