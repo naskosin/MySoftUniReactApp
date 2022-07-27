@@ -1,7 +1,7 @@
 import styles from './BaitCard.module.css';
 
 import {Link} from 'react-router-dom';
-import { useAuthContext } from '../../contexts/AuthContext';
+import { useAuthContext } from '../../../contexts/AuthContext';
 
 const BaitCard = ({bait})=>{
     const {userInfo} = useAuthContext();

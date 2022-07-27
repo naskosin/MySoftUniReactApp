@@ -161,4 +161,4 @@ let baitd = bait._id;
 
 
 
-export default isOwner(Edit);
+export default Edit;

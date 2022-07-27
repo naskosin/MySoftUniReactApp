@@ -39,7 +39,18 @@ export function getAllBaits(){
        return result;
       };
 
-
+      export async function deleteOneBait(token, id){
+        let res = await fetch(`https://nasko-fish.herokuapp.com/data/fishes/${id}`, {
+           method: 'DELETE',
+           headers: {
+             'content-type': 'applications/json',
+             'X-Authorization' : token,
+             
+           }
+         });
+         let result = await res.json();
+         return result;
+        };
 
 async function resulter(res){
     let jsonResult = await res.json();

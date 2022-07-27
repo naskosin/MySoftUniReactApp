@@ -1,6 +1,6 @@
 import styles from './Gallery.module.css';
 import {useEffect, useState} from 'react';
-import BaitCard from '../BaitCard/BaitCard';
+import BaitCard from './BaitCard/BaitCard';
 import * as baitServices from '../../services/baitService';
 
 const Gallery = ()=>{

@@ -2,10 +2,11 @@ import { Link } from "react-router-dom";
 import { isAuth } from "../../guards/isAuth";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import BaitDetailsCard from "./BaitDetailsCard/BaitDetailscard";
 import styles from "./Details.module.css";
 import * as baitService from "../../services/baitService";
 import * as commentService from "../../services/commentService";
-import Comment  from "../Comments/Comment";
+import Comment  from "./Comments/Comment";
 import { useAuthContext } from "../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 
@@ -15,8 +16,8 @@ const Details = () => {
   const { userInfo } = useAuthContext();
   const {baitId } = useParams();
   const navigate = useNavigate();
-
-  //let themeId = gameid;
+console.log(baitId)
+ let themeId = baitId;
   const token = userInfo.accessToken;
 
   const email = userInfo.email;
@@ -71,11 +72,8 @@ const Details = () => {
 
 
 
-// const deleteArticle = (gameid) => {
-//   gameServices.deleteOneBait(token, themeId).then((data) => console.log(data));
-//   navigate("/");
-// };
-//
+
+
 //const deleteComment = (id) => {
 //  commentServices.deleteOneComment(token, id);
 //  navigate(0);
@@ -83,44 +81,44 @@ const Details = () => {
 
   return (
     <>
-      <section className={styles.sectionmain}>
-        <article className={styles.main}>
-          <div className={styles.mainimgwrapper}>
-            <img src={bait.img} className={styles.mainimg} alt="No picture" />
-          </div>
-          <div className={styles.detailsdiv}>
-            <p>
-              <span>Fish species: </span> {bait.species}{" "}
-            </p>
-            <p>
-              <span className={styles.span}>Bait: </span> {bait.bait}
-            </p>
-            <p>
-              {" "}
-              <span>The story: </span>
-              {bait.story}
-            </p>
+     {/* <section className={styles.sectionmain}> */}
+       {/* <article className={styles.main}> */}
+         {/* <div className={styles.mainimgwrapper}> */}
+           {/* <img src={bait.img} className={styles.mainimg} alt="No picture" /> */}
+         {/* </div> */}
+         {/* <div className={styles.detailsdiv}> */}
+           {/* <p> */}
+             {/* <span>Fish species: </span> {bait.species}{" "} */}
+           {/* </p> */}
+           {/* <p> */}
+             {/* <span className={styles.span}>Bait: </span> {bait.bait} */}
+           {/* </p> */}
+           {/* <p> */}
+             {/* {" "} */}
+             {/* <span>The story: </span> */}
+             {/* {bait.story} */}
+           {/* </p> */}
 
-            <p>
-              <span>Weight: </span>
-              {bait.weight}kg.
-            </p>
-            {userInfo._id === bait._ownerId ? (
-              <div>
-                <button className={styles.delete}>
-                  <Link to={`/gallery/edit/${bait._id}`}>Edit article</Link>
-                </button>
-                <button className={styles.edit} >
-                  Delete article
-                </button>
-              </div>
-            ) : (
-              ""
-            )}
-          </div>
-        </article>
-      </section>
-     
+           {/* <p> */}
+             {/* <span>Weight: </span> */}
+             {/* {bait.weight}kg. */}
+           {/* </p> */}
+           {/* {userInfo._id === bait._ownerId ? ( */}
+            {/* //  <div> */}
+               {/* <button className={styles.delete}> */}
+                 {/* <Link to={`/gallery/edit/${bait._id}`}>Edit article</Link> */}
+               {/* </button> */}
+               {/* <button className={styles.edit} onClick={deletePost} > */}
+                 {/* Delete article */}
+               {/* </button> */}
+             {/* </div> */}
+          {/* ) : ( */}
+            {/* "" */}
+          {/* )} */}
+         {/* </div> */}
+       {/* </article> */}
+     {/* </section> */}
+     {<BaitDetailsCard bait={bait}  />}
       {comments.length > 0 ? (
         <section>
           {comments.map((x) => (
