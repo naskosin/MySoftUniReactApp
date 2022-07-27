@@ -10,7 +10,7 @@
     
     .createcontainerinfo {
         background-color: #fff;
-        width: 70%;
+        width: 80%;
        
         display: grid;
         grid-template-columns: 40% 60%;
@@ -18,7 +18,7 @@
         line-height: 1.5;
         margin: 160px auto 100px auto;
         box-shadow: 0 20px 30px rgba(0, 0, 0, 0.185);
-        border-style: solid;
+     
         border-color: lightskyblue;
         border-radius: 25px;
         background-color: lightskyblue;
