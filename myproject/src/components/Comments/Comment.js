@@ -1,13 +1,13 @@
-import { authContext } from "../contexts/AuthContext";
+import { useAuthContext } from "../../contexts/AuthContext";
 import {  useState } from "react";
 
 
-import styles from "./Comment.module.css";
+import styles from "./Comments.module.css";
 
 export const Comment = ({ comment, editComment, deleteComment }) => {
     
 
-  const { userInfo } = authContext();
+  const { userInfo } = useAuthContext();
   const token = userInfo.accessToken;
   console.log(token)
   const email = userInfo.email;
@@ -78,3 +78,4 @@ let editView =
     </div>
   );
 };
+export default Comment;

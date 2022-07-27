@@ -4,13 +4,14 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styles from "./Details.module.css";
 import * as baitService from "../../services/baitService";
-
+import * as commentService from "../../services/commentService";
+import Comment  from "../Comments/Comment";
 import { useAuthContext } from "../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 const Details = () => {
-  const [bait, baitState] = useState([]);
-
+  const [bait, setBait] = useState([]);
+  const [comments, commentsState] = useState([]);
   const { userInfo } = useAuthContext();
   const {baitId } = useParams();
   const navigate = useNavigate();
@@ -20,16 +21,21 @@ const Details = () => {
 
   const email = userInfo.email;
 
+
   useEffect(() => {
-   
-  
-    baitService.getOneBait(baitId).then((res) => {
-      baitState(res) ; console.log(res);
+    commentService.getAllComments().then((res) => {
+      let data = res.filter((x) => baitId === x.themeId);
+      commentsState(data);
+    });
+    baitService.getOneBait(baitId ).then((res) => {
+      setBait(res);
     });
   }, []);
-
-
-
+ // const editComment = (e, id) => {
+ //   e.preventDefault();
+ //   let { comment } = Object.fromEntries(new FormData(e.currentTarget));
+ //   let text = { comment, email, themeId };
+ //   commentServices.editOneComment(token, text, id)
    //.then((data) => {
    //  console.log(data.comment)
    //  let arr = comments;
@@ -46,19 +52,21 @@ const Details = () => {
    //  console.log(comments)
    //  
    //
- // //});
+   //});
  // navigate(0);
- //};
+ //}
+
+
 
 // const deleteArticle = (gameid) => {
-//   gameServices.deleteOne(token, themeId).then((data) => console.log(data));
+//   gameServices.deleteOneBait(token, themeId).then((data) => console.log(data));
 //   navigate("/");
 // };
 //
-// const deleteComment = (id) => {
-//   commentServices.deleteOneComment(token, id);
-//   navigate(0);
-// };
+//const deleteComment = (id) => {
+//  commentServices.deleteOneComment(token, id);
+//  navigate(0);
+//};
 
   return (
     <>
@@ -100,6 +108,37 @@ const Details = () => {
         </article>
       </section>
      
+      {comments.length > 0 ? (
+        <section>
+          {comments.map((x) => (
+            <Comment
+              key={x._id}
+              comment={x}
+              // editComment={(e) => editComment(e, x._id)}
+              // deleteComment={() => deleteComment(x._id)}
+            />
+          ))}
+        </section>
+      ) : (
+        <div className={styles.no__comments}>
+          <p className={styles.no__comments}>No comments yet!</p>
+        </div>
+      )}
+
+      <div className={styles.container}>
+        <form className={styles.form__container} onSubmit={createYourComment}>
+          <h2>Comment</h2>
+
+          <textarea
+            type="text"
+            id="uses"
+            placeholder="This day"
+            name="comment"
+          ></textarea>
+
+          <button>Comment</button>
+        </form>
+      </div>
     </>
   );
 };
