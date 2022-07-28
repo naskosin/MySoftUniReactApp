@@ -1,6 +1,7 @@
 import Header from "./components/Header/Header";
 import About from "./components/About/About";
 import BiggestFishes from "./components/BiggestFishes/BiggestFishes";
+import MyBaits from "./components/MyBaits/MyBaits";
 import { AuthProvider } from "./contexts/AuthContext";
 import Footer from "./components/Footer/Footer";
 import Create from "./components/Create/Create";
@@ -32,6 +33,7 @@ function App() {
             <Route path="*" element={<PageNotFound />} />
             <Route path="/contacts" element={<Contacts />} />
             <Route path="/About" element={<About />} />
+            <Route path="/mybaits" element={<MyBaits/>}/>
             <Route path="/biggestfishes" element={<BiggestFishes />} />
           </Routes>
         </main>

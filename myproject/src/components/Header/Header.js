@@ -38,9 +38,9 @@ let loggedNavigation =
     <Link  className={styles.header__a} to="/biggestfishes">Biggest Fishes</Link>
   </li>
   {/* <li><Link  className={styles.header__a} to="search">Search</Link></li> */}
-  {/* <li> */}
-    {/* <Link  className={styles.header__a} to="/mycatches">My catches</Link> */}
-  {/* </li> */}
+  <li>
+    <Link  className={styles.header__a} to="/mybaits">My baits</Link>
+  </li>
 </ul>
 
 
