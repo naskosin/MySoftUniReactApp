@@ -20,7 +20,7 @@ useEffect(()=>{
 return(
     <> 
 <section  >
-{baits.map((fish,index)=><TopFiveItems  key = {fish._id} fish={fish} index={index}/>)}
+{baits.map((bait,index)=><TopFiveItems  key = {bait._id} fish={fish} index={index}/>)}
 
 </section>
 

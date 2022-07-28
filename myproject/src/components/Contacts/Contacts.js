@@ -1,20 +1,20 @@
-
+import styles from './Contacts.module.css';
 
 
 const Contacts =()=>{
 
 return (
 
-<section class="top">
-    <div class="left__wrapper">
-        <p>Life could be joy, when you share your fish of lifetime</p>
+<section className={styles.top}>
+    <div className={styles.left__wrapper}>
+        <p className={styles.contacts__paragraph}>Life could be joy, when you share your fish of lifetime</p>
     </div>
   <article >
       <h1>Contact us at:</h1>
-     <div  class="img__wrapper"> <a href="https://www.facebook.com/groups/2861971267356482" ><img src="assets/189169378_10221661787359712_5443228809372312002_n.jpg" alt=""/></a></div>
-    <ul class="list">
+     <div  className={styles.img__wrapper}> <a href="https://www.facebook.com/groups/2861971267356482" ><img src="assets/n.jpg" alt=""/></a></div>
+    <ul className={styles.list}>
         <li>
-            <p>Biggest catches</p>
+            <p>Extress fishing</p>
         </li>
         <li>
             <p>16 Daskalov street</p>
