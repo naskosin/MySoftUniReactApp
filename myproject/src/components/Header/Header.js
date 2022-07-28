@@ -22,24 +22,24 @@ let loggedNavigation =
  <p className={styles.username} >Hi, {userInfo.email}!</p> 
 <ul>
   <li>
-    <Link to="/">Home</Link>
+    <Link className={styles.header__a} to="/">Home</Link>
   </li>
   <li>
-    <Link to="/gallery">Gallery</Link>
+    <Link className={styles.header__a} to="/gallery">Gallery</Link>
   </li>
   <li>
-    <Link to="/create">Post bait</Link>
+    <Link className={styles.header__a} to="/create">Post bait</Link>
   </li>
   <li>
   
-  < a href ="/#" onClick = {logOut}>Logout</a>
+  < a  className={styles.header__a} href ="/#" onClick = {logOut}>Logout</a>
   </li>
   <li>
-    <Link to="/biggestfishes">Biggest Fishes</Link>
+    <Link  className={styles.header__a} to="/biggestfishes">Biggest Fishes</Link>
   </li>
-  {/* <li><Link to="search">Search</Link></li> */}
+  {/* <li><Link  className={styles.header__a} to="search">Search</Link></li> */}
   {/* <li> */}
-    {/* <Link to="/mycatches">My catches</Link> */}
+    {/* <Link  className={styles.header__a} to="/mycatches">My catches</Link> */}
   {/* </li> */}
 </ul>
 
@@ -50,19 +50,19 @@ let loggedNavigation =
  <nav  id={styles.not__logged}>
  <ul>
    <li>
-     <Link to="/">Home</Link>
+     <Link className={styles.header__a} to="/">Home</Link>
    </li>
 
-   <li> <Link  to="/register">Register</Link></li>
+   <li> <Link  className={styles.header__a} to="/register">Register</Link></li>
    <li>
-   <Link  to="/login">Login</Link>
+   <Link className={styles.header__a}  to="/login">Login</Link>
    </li>
    <li>
-   <Link  to="/gallery">Gallery</Link>
+   <Link  className={styles.header__a} to="/gallery">Gallery</Link>
    </li>
 {/*  */}
    {/* <li> */}
-     {/* <Link to="/gallery/catch/topFive">Top 5</Link> */}
+     {/* <Link className={styles.header__a} to="/biggestfishes">Top 5</Link> */}
    {/* </li> */}
  </ul>
 </nav>;

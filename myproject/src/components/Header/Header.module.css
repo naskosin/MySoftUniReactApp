@@ -7,14 +7,14 @@
     background-image: url('../../../public/assets/bedrefiskeutstyr-no duo spearhead ryuki wobbler til ørret trout fiske ørret maximus ultimatum.jpg');
     background-size: fill;
     display: inline-block;
-    
+    z-index: 1;
     position: fixed;
     top: 0;
     left:0;
     
     height: 150px;
 }
-.header a, p{
+.header__paragraph, .header__a{
     color: rgb(234, 16, 162);
     font-family: Lobster, sans-serif;
     letter-spacing: 1px;

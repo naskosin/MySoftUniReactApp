@@ -3,6 +3,9 @@ main{
      
      
  }
+ .baitcard__article{
+height: 350px;
+ }
  .sectionmain{
      margin: 0 auto ;
      width: 80%;
@@ -30,22 +33,41 @@ main{
     margin:0 0 30px 40px;
     border-radius: 4px;
     background-color: lightskyblue;
-    border-top-left-radius: 30px;   
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
  
  }
  
- .articlebutton{
+ .details__button{
     margin: 0 auto;
     text-align: center;
     display: block;
     padding: 5px 50px;
     border-radius: 30px;
-    background-color: lightblue;
-    top: 10px
+    color:black;
+    background-color: lightskyblue;
+    top: 10px;
  }
- p{
-    font-weight: 500;
-    margin: 10px 0;
+ .div__details__button{
+    position:relative;
+    background-color: lightblue;
+    opacity: 0.5;
+    top: -200px;
+ }
+ .div__details__button:hover{
+
+   opacity: 0.9;
+ }
+
+
+ .baitcard__paragraph{
+   color: rgb(234, 16, 162);
+   font-family: Lobster, sans-serif;
+   letter-spacing: 1px;
+   text-decoration: none;
+   font-weight: bold;
+   font-size: 1.3rem;
+   margin:  0 0 0 0;
  }
  .article{
     display: inline-block;
@@ -58,7 +80,7 @@ main{
     width: 350px;
    height:300px;
     border-top-left-radius: 30px;  
-    margin-bottom: 5px; 
+    margin-bottom: 10px; 
     
  }
  .articleimgwrapper .articleimg{
@@ -106,7 +128,7 @@ main{
     background-color: white;
     text-align: right;
  }
- .articlebutton{
+ .details__button{
     margin: 15px auto;
  }   
  
