@@ -1,6 +1,6 @@
 .my_catches{
     width: 60%;
-    margin: 50px auto 200px auto;
+    margin: 155px auto 200px auto;
     border: solid 5px black;
     border-radius: 30px;
     background-color: lightskyblue;
@@ -10,6 +10,17 @@
     width:400px;
     
  }
+
+ .mybaits__ul {
+   padding: 0;
+ margin: 50px auto;
+ width: 80%;
+ text-align: center;
+ display: flex;
+ flex-wrap: wrap;
+ flex-direction: row;
+ list-style-type: none;
+ gap: 64px; } 
  .article__header__img__wrapper{
    aspect-ratio: 1/1;
    overflow: hidden;
