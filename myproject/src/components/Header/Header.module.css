@@ -14,6 +14,12 @@
 
   height: 150px;
 }
+.not__logged {
+    display: inline-block;
+    text-align: right;
+    margin: 90px 0px 0px 250px;
+  }
+
 .header__paragraph,
 .header__a {
   color: rgb(234, 16, 162);
@@ -45,7 +51,7 @@
   padding: 0 10px;
   text-align: right;
 }
-.header nav {
+.isLogged{
   display: inline-block;
   margin: 90px 0px 0px 100px;
   text-align: right;
@@ -76,7 +82,7 @@ h4 {
   color: white;
   background-color: aqua;
 }
-#not__logged > li {
+.not__logged > li {
   text-align: center;
   display: inline-block;
   margin: 0 0 30px 40px;
@@ -85,18 +91,7 @@ h4 {
   border-top-left-radius: 30px;
 }
 
-/* #not__logged>ul{ */
-/*  */
-/* padding:0; */
-/* display: inline-block; */
-/*  */
-/*  */
-/* } */
-/* #not__logged{ */
-/* display: inline-block; */
-/* margin: 90px 0px 0px 350px ; */
-/* text-align: right; */
-/* } */
+
 .notification {
   position: absolute;
   top: 150px;
@@ -117,10 +112,7 @@ h4 {
     margin: 0;
     text-align: right;
   }
-  #not__logged {
-    display: inline-block;
-    text-align: right;
-  }
+ 
   .header li {
     text-align: center;
     display: inline-block;

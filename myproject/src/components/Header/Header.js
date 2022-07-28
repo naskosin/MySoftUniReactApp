@@ -47,7 +47,7 @@ let loggedNavigation =
 </nav> 
 
  let guestNavigation = 
- <nav  id={styles.not__logged}>
+ <nav  className={styles.not__logged}>
  <ul>
    <li>
      <Link className={styles.header__a} to="/">Home</Link>
