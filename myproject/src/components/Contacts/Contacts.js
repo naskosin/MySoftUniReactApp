@@ -9,7 +9,7 @@ return (
     <div className={styles.left__wrapper}>
         <p className={styles.contacts__paragraph}>Life could be joy, when you share your fish of lifetime</p>
     </div>
-  <article >
+  <article className={styles.contacts__article}>
       <h1>Contact us at:</h1>
      <div  className={styles.img__wrapper}> <a href="https://www.facebook.com/groups/2861971267356482" ><img src="assets/n.jpg" alt=""/></a></div>
     <ul className={styles.list}>

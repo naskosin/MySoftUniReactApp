@@ -34,9 +34,9 @@ let loggedNavigation =
   
   < a href ="/#" onClick = {logOut}>Logout</a>
   </li>
-  {/* <li> */}
-    {/* <Link to="/topfive">Top 5</Link> */}
-  {/* </li> */}
+  <li>
+    <Link to="/biggestfishes">Biggest Fishes</Link>
+  </li>
   {/* <li><Link to="search">Search</Link></li> */}
   {/* <li> */}
     {/* <Link to="/mycatches">My catches</Link> */}

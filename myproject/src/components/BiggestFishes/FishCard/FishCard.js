@@ -1,6 +1,6 @@
-import styles from "./topfiveitems.module.css";
+import styles from "./FishCard.module.css";
 
-const TopFiveItems = ({fish, index}) =>{
+const FishCard = ({fish, index}) =>{
 return(
     <article className={styles.top} >
     <p className={styles.top__description}><span className={styles.top__span}>Number: {index+1}  </span></p>
@@ -15,4 +15,4 @@ return(
 </article>
 )
 }
-export default TopFiveItems;
+export default FishCard;

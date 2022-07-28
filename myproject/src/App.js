@@ -32,7 +32,7 @@ function App() {
             <Route path="*" element={<PageNotFound />} />
             <Route path="/contacts" element={<Contacts />} />
             <Route path="/About" element={<About />} />
-            <Route path="/BiggestFishes" element={<BiggestFishes />} />
+            <Route path="/biggestfishes" element={<BiggestFishes />} />
           </Routes>
         </main>
         <Footer />
