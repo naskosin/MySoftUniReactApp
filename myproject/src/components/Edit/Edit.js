@@ -9,7 +9,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useAuthContext } from "../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
-const initialState = { species: "", weight: "", bait: "", img: "", story: "" };
+const initialState = { species: "Filled", weight: "Filled", bait: "Filled", img: "Filled", story: "Filled" };
 const Edit = () => {
 
   const navigate = useNavigate()

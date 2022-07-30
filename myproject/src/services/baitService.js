@@ -25,9 +25,9 @@ export function getAllBaits(){
      return result;
     };
 
-    export async function editOneBait(token, petData){
-      let res = await fetch('https://nasko-fish.herokuapp.com/data/fishes', {
-         method: 'POST',
+    export async function editOneBait(token, petData, id){
+      let res = await fetch(`https://nasko-fish.herokuapp.com/data/fishes/${id}`, {
+         method: 'PUT',
          headers: {
            'content-type': 'applications/json',
            'X-Authorization' : token,

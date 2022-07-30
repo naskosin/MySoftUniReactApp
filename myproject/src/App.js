@@ -33,6 +33,8 @@ function App() {
             <Route path="*" element={<PageNotFound />} />
             <Route path="/contacts" element={<Contacts />} />
             <Route path="/About" element={<About />} />
+            <Route path="/gallery/edit/:baitId" element = {<Edit />}/>
+
             <Route path="/mybaits" element={<MyBaits/>}/>
             <Route path="/biggestfishes" element={<BiggestFishes />} />
           </Routes>

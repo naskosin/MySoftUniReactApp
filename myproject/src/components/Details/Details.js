@@ -15,9 +15,8 @@ const Details = () => {
   const [comments, commentsState] = useState([]);
   const { userInfo } = useAuthContext();
   const {baitId } = useParams();
-  const navigate = useNavigate();
 console.log(baitId)
- let themeId = baitId;
+
   const token = userInfo.accessToken;
 
   const email = userInfo.email;
@@ -25,7 +24,8 @@ console.log(baitId)
 
   useEffect(() => {
     commentService.getAllComments().then((res) => {
-      let data = res.filter((x) => baitId === x.themeId);
+      console.log(res)
+      let data = res.filter((x) => baitId === x.baitId);
       commentsState(data);
     });
     baitService.getOneBait(baitId ).then((res) => {
@@ -45,88 +45,20 @@ console.log(baitId)
   };
 
 
- // const editComment = (e, id) => {
- //   e.preventDefault();
- //   let { comment } = Object.fromEntries(new FormData(e.currentTarget));
- //   let text = { comment, email, themeId };
- //   commentServices.editOneComment(token, text, id)
-   //.then((data) => {
-   //  console.log(data.comment)
-   //  let arr = comments;
-   //  arr.map((x) => {
-   //    if (x._id === id) {
-   //      console.log(x._id);
-   //      console.log({x});
-   //      return x.comment= data.comment ;
-   //    }
-   //    return x;
-   //  });
-   //  console.log(comments)
-   //  commentsState(arr);
-   //  console.log(comments)
-   //  
-   //
-   //});
- // navigate(0);
- //}
-
-
-
-
-
-//const deleteComment = (id) => {
-//  commentServices.deleteOneComment(token, id);
-//  navigate(0);
-//};
 
   return (
     <>
-     {/* <section className={styles.sectionmain}> */}
-       {/* <article className={styles.main}> */}
-         {/* <div className={styles.mainimgwrapper}> */}
-           {/* <img src={bait.img} className={styles.mainimg} alt="No picture" /> */}
-         {/* </div> */}
-         {/* <div className={styles.detailsdiv}> */}
-           {/* <p> */}
-             {/* <span>Fish species: </span> {bait.species}{" "} */}
-           {/* </p> */}
-           {/* <p> */}
-             {/* <span className={styles.span}>Bait: </span> {bait.bait} */}
-           {/* </p> */}
-           {/* <p> */}
-             {/* {" "} */}
-             {/* <span>The story: </span> */}
-             {/* {bait.story} */}
-           {/* </p> */}
-
-           {/* <p> */}
-             {/* <span>Weight: </span> */}
-             {/* {bait.weight}kg. */}
-           {/* </p> */}
-           {/* {userInfo._id === bait._ownerId ? ( */}
-            {/* //  <div> */}
-               {/* <button className={styles.delete}> */}
-                 {/* <Link to={`/gallery/edit/${bait._id}`}>Edit article</Link> */}
-               {/* </button> */}
-               {/* <button className={styles.edit} onClick={deletePost} > */}
-                 {/* Delete article */}
-               {/* </button> */}
-             {/* </div> */}
-          {/* ) : ( */}
-            {/* "" */}
-          {/* )} */}
-         {/* </div> */}
-       {/* </article> */}
-     {/* </section> */}
+    
      {<BaitDetailsCard bait={bait}  />}
       {comments.length > 0 ? (
         <section>
           {comments.map((x) => (
             <Comment
               key={x._id}
-              comment={x}
-              // editComment={(e) => editComment(e, x._id)}
-              // deleteComment={() => deleteComment(x._id)}
+              commentText={x}
+              commentId={x._id}
+              baitId= {baitId}
+              
             />
           ))}
         </section>

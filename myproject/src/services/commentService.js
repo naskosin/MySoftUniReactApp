@@ -17,3 +17,30 @@ export function getAllComments(){
      let result = await res.json();
      return result;
     };
+
+    export async function editOneComment(token, text, id){
+        let res = await fetch(`https://nasko-fish.herokuapp.com/data/comments/${id}`, {
+           method: 'PUT',
+           headers: {
+             'content-type': 'applications/json',
+             'X-Authorization' : token,
+             
+           },
+           body: JSON.stringify(text)
+         });
+         let result = await res.json();
+         return result;
+        };
+  
+        export async function deleteOneComment(token, id){
+          let res = await fetch(`https://nasko-fish.herokuapp.com/data/comments/${id}`, {
+             method: 'DELETE',
+             headers: {
+               'content-type': 'applications/json',
+               'X-Authorization' : token,
+               
+             }
+           });
+           let result = await res.json();
+           return result;
+          }; 
