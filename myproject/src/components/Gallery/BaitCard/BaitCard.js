@@ -12,7 +12,7 @@ const BaitCard = ({bait})=>{
     <img className={styles.articleimg} src={bait.img} alt=""/></div>
     
         
-        <p className={styles.baitcard__paragraph}>{bait.species}</p>
+        <p className={styles.baitcard__paragraph}>{bait.bait}</p>
         {userInfo.email ? <div className={styles.div__details__button}><button  className={styles.details__button}>
           <Link to={`/gallery/${bait._id}`}>Details </Link></button></div> : '' } 
   
