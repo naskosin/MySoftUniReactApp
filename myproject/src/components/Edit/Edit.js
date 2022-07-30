@@ -1,45 +1,49 @@
-//import { isAuth } from "../hoc/isAuth";
 import * as baitService from "../../services/baitService";
 import styles from "./Edit.module.css";
 import { useHandler } from "../../hooks/useCreateEditValidator";
-import { isOwner } from "../../guards/isNotAuth";
-
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useAuthContext } from "../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
-const initialState = { species: "Filled", weight: "Filled", bait: "Filled", img: "Filled", story: "Filled" };
+const initialState = {
+  baitType: "Filled",
+  weight: "Filled",
+  bait: "Filled",
+  img: "Filled",
+  story: "Filled",
+  fish_img: "Filled",
+};
 const Edit = () => {
-
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const { baitId } = useParams();
-  const {userInfo} = useAuthContext();
+  const { userInfo } = useAuthContext();
   const [bait, baitState] = useState({});
   const [error, setError, isFormValid] = useHandler(initialState);
   const editOne = (e) => {
     e.preventDefault();
     const token = userInfo.accessToken;
     console.log(token);
-    const { species, bait, img, story, weight } = Object.fromEntries(
+    const { baitType, bait, img, story, weight } = Object.fromEntries(
       new FormData(e.currentTarget)
     );
-    let petData = { species, bait, img, story, weight };
+    let petData = { baitType, bait, img, story, weight };
     console.log(petData);
- baitService.editOneBait(token, petData, baitId).then(data=>console.log(data));
- navigate(`/gallery/${baitId}`)
+    baitService
+      .editOneBait(token, petData, baitId)
+      .then((data) => console.log(data));
+    navigate(`/gallery/${baitId}`);
   };
   useEffect(() => {
-   baitService
+    baitService
       .getOneBait(baitId)
 
       .then((data) => {
         baitState(data);
-       
       });
   }, []);
 
-let baitd = bait._id;
+  let baitd = bait._id;
 
   return (
     <div className={styles.createcontainerinfo}>
@@ -49,22 +53,22 @@ let baitd = bait._id;
         <h2>Edit Catch</h2>
         <p>Add your bait of lifetime!</p>
 
-        <label htmlFor="title">Species:</label>
+        <label htmlFor="title">Bait Type:</label>
         <input
           type="text"
           id="title"
           placeholder="Trout"
-          name="species"
+          name="baitType"
           onBlur={setError}
-          defaultValue={bait.species}
+          defaultValue={bait.baitType}
           className={
-            error.species && error.species !== "Filled"
+            error.baitType && error.baitType !== "Filled"
               ? styles.inputerror
               : styles.input
           }
         />
-        {error.species && error.species !== "Filled" ? (
-          <p className={styles.errorParagraph}>{error.species}</p>
+        {error.baitType && error.baitType !== "Filled" ? (
+          <p className={styles.errorParagraph}>{error.baitType}</p>
         ) : (
           ""
         )}
@@ -89,7 +93,7 @@ let baitd = bait._id;
           ""
         )}
 
-        <label htmlFor="picture">bait picture:</label>
+        <label htmlFor="picture">Bait picture:</label>
         <input
           type="text"
           id="picture"
@@ -99,6 +103,27 @@ let baitd = bait._id;
           defaultValue={bait.img}
           className={
             error.img && error.img !== "Filled"
+              ? styles.inputerror
+              : styles.input
+          }
+        />
+
+        {error.img && error.img !== "Filled" ? (
+          <p className={styles.errorParagraph}>{error.img}</p>
+        ) : (
+          ""
+        )}
+
+        <label htmlFor="fish_img">Fish picture:</label>
+        <input
+          type="text"
+          id="picture"
+          placeholder="http://..."
+          name="fish_img"
+          onBlur={setError}
+          defaultValue={bait.fish_img}
+          className={
+            error.fish_img && error.fish_img !== "Filled"
               ? styles.inputerror
               : styles.input
           }
@@ -158,7 +183,5 @@ let baitd = bait._id;
     </div>
   );
 };
-
-
 
 export default Edit;

@@ -47,15 +47,15 @@ export const useHandler = (initalState) => {
     
    }
  }
- else  if(field==="fishPicture"){
-  let img = e.currentTarget.value;
-if (img.length === 0) {
-setError((state) => ({ ...state, fishPicture: "Image is required" }));
-console.log("Hi");
-} else if (!img.match(/(http:|https:)+[^\s]+[\w]/)) {
-setError((state) => ({ ...state, fishPicture: "Must begin with http:// or https://!" }));
+ else  if(field==="fish_img"){
+  let fish_img = e.currentTarget.value;
+if (fish_img.length === 0) {
+setError((state) => ({ ...state, fish_img: "Image is required" }));
+
+} else if (!fish_img.match(/(http:|https:)+[^\s]+[\w]/)) {
+setError((state) => ({ ...state, fish_img: "Must begin with http:// or https://!" }));
 } else {
-setError((state) => ({ ...state, fishPicture: "Filled" }));
+setError((state) => ({ ...state, fish_img: "Filled" }));
 
 }
 }  
@@ -81,7 +81,7 @@ setError((state) => ({ ...state, fishPicture: "Filled" }));
       
   };
   
-  let isFormValid = error.baitType ==="Filled"  && error.bait=== "Filled" && error.img=== "Filled" && error.story=== "Filled" && error.weight=== "Filled" &&error.img=== "Filled" && error.fishPicture=== "Filled"
+  let isFormValid = error.baitType ==="Filled"  && error.bait=== "Filled" && error.img=== "Filled" && error.story=== "Filled" && error.weight=== "Filled" &&error.img=== "Filled" && error.fish_img=== "Filled"
   console.log(isFormValid)
   return [error, setItem, isFormValid];
 };

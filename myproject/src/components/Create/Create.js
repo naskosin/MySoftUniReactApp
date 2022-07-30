@@ -4,7 +4,7 @@ import styles from "./Create.module.css";
 import { useAuthContext } from "../../contexts/AuthContext";
 import { useHandler } from "../../hooks/useCreateEditValidator";
 import { useNavigate } from "react-router-dom";
-const initialState = { species: "", weight: "", bait: "", img: "", fishPicture: "", story: "" };
+const initialState = { species: "", weight: "", bait: "", img: "", fish_img: "", story: "" };
 
 const Create = () => {
   const { userInfo } = useAuthContext();
@@ -19,10 +19,10 @@ const Create = () => {
 
     const token = userInfo.accessToken;
     console.log(token);
-    const { baitType, bait, img, fishPicture, story, weight } = Object.fromEntries(
+    const { baitType, bait, img, fish_img, story, weight } = Object.fromEntries(
       new FormData(e.currentTarget)
     );
-    let petData = { baitType, bait, img, fishPicture, story, weight };
+    let petData = { baitType, bait, img, fish_img, story, weight };
     console.log(petData);
     baitService
       .createOne(token, petData)
@@ -93,21 +93,21 @@ const Create = () => {
           }
         />
 
-<label htmlFor="fishPicture">Fish picture:</label>
+<label htmlFor="fish_img">Fish picture:</label>
         <input
           type="text"
-          id="fishPicture"
+          id="fish_img"
           placeholder="http://..."
-          name="fishPicture"
+          name="fish_img"
           onBlur={setError}
           className={
-            error.fishPicture && error.fishPicture!== "Filled"
+            error.fish_img && error.fish_img!== "Filled"
               ? styles.inputerror
               : styles.input
           }
         />
-        {error.fishPicture && error.fishPicture !== "Filled" ? (
-          <p className={styles.errorParagraph}>{error.fishPicture}</p>
+        {error.fish_img && error.fish_img !== "Filled" ? (
+          <p className={styles.errorParagraph}>{error.fish_img}</p>
         ) : (
           ""
         )}
