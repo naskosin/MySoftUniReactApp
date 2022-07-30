@@ -3,6 +3,7 @@ import About from "./components/About/About";
 import BiggestFishes from "./components/BiggestFishes/BiggestFishes";
 import MyBaits from "./components/MyBaits/MyBaits";
 import { AuthProvider } from "./contexts/AuthContext";
+import { NotifyProvider } from "./contexts/NotifyContext";
 import Footer from "./components/Footer/Footer";
 import Create from "./components/Create/Create";
 import Gallery from "./components/Gallery/Gallery";
@@ -19,6 +20,7 @@ import "./App.css";
 function App() {
   return (
     <AuthProvider>
+      <NotifyProvider>
       <div>
         <Header />
 
@@ -41,7 +43,9 @@ function App() {
         </main>
         <Footer />
       </div>
+      </NotifyProvider>
     </AuthProvider>
+    
   );
 }
 

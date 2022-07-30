@@ -7,16 +7,15 @@ import { useValidateHandler } from "../../hooks/useAuthValidator";
 
 import { useAuthContext} from "../../contexts/AuthContext";
 
-//import * as gameServices from "../services/gameServices";
-//import { notifyContext } from "../contexts/NotifyContext";
+
+import { useNotifyContext } from "../../contexts/NotifyContext";
 
 const Register = () => {
   const initialState  = { email: "", password: "", rePassword: "", form: true };
  const { login } = useAuthContext();
-  //const { errorNotification, notification } = notifyContext();
+ const { errorNotification, notification } = useNotifyContext();
 const [error, setError, isFormValid] = useValidateHandler(initialState);
-  //let isCorrect = '';
-//
+  
   const onRegister = (e) => {
     e.preventDefault();
     let formData = new FormData(e.currentTarget);
@@ -30,10 +29,10 @@ authService
      login(regData);
         })
         .catch((err) => {
-          console.log(err);
+          notification(err);
         });
     } else {
-      console.log("Error rePassword")
+      notification("Error rePassword")
      
     }
 

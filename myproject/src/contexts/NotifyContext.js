@@ -33,7 +33,7 @@ export const NotifyProvider = ({children}) =>{
          </NotifyContext.Provider>
      )
 };
- export const notifyContext=()=>{
+ export const useNotifyContext=()=>{
      const notifyState = useContext(NotifyContext);
 return notifyState;
  }

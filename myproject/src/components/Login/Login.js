@@ -1,24 +1,24 @@
 import styles from "./Login.module.css";
 import * as authService from "../../services/authService";
 import { isNotAuth } from "../../guards/isNotAuth";
-//import { notifyContext } from "../contexts/NotifyContext";
-//
+import { useNotifyContext } from "../../contexts/NotifyContext";
+
 import { useAuthContext } from "../../contexts/AuthContext";
-//import * as gameServices from "../services/gameServices";
+
 import { useValidateHandler } from "../../hooks/useAuthValidator";
 import { useNavigate } from "react-router-dom";
 
-//import { isNotAuth } from "../hoc/isAuth";
+
 
 const Login = () => {
    const {  login } =useAuthContext();
-  // const {errorNotification, notification } = notifyContext();
-  //
+  const {errorNotification, notification } = useNotifyContext();
+ 
   const initialState = { email: "", password: "", rePassword: "Filled" };
   const [error, setError, isFormValid] = useValidateHandler(initialState);
-  //
-  //
-  //
+  
+  
+  
   const navigate = useNavigate();
 
   const onLogin = (e) => {
@@ -36,7 +36,8 @@ const Login = () => {
         navigate("/");
       })
       .catch((err) => {
-        console.log(err);
+        notification(err);
+        console.log(errorNotification)
       });
   };
 

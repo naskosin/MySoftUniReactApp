@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css'; 
 import * as authService from '../../services/authService';
-//import { notifyContext } from '../contexts/NotifyContext';
+import { useNotifyContext } from "../../contexts/NotifyContext";
 import {AuthContext } from '../../contexts/AuthContext';
 import { useContext } from 'react';
 const Header =(
@@ -10,7 +10,7 @@ const Header =(
 
 const {userInfo, logout} =useContext(AuthContext);
 let token = userInfo.accessToken;
-//const {errorNotification, notification } = notifyContext();
+const {errorNotification, notification } = useNotifyContext();
 const logOut = () =>{
   authService.loginOut(token);
   logout();
@@ -76,7 +76,7 @@ let loggedNavigation =
   
     
      
-    {/* {errorNotification ? <p className={styles.notification} >{errorNotification} </p> : ''}  */}
+    {errorNotification ? <p className={styles.notification} >{errorNotification} </p> : ''} 
    
   </header>
   )
