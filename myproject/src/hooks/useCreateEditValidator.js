@@ -5,17 +5,17 @@ export const useHandler = (initalState) => {
   const setItem = (e) => {
     let field = e.currentTarget.name;
     console.log(field);
-    if (field === "species") {
+    if (field === "baitType") {
       let species = e.currentTarget.value;
       if (species.length === 0) {
-        setError((state) => ({ ...state, species: "Species is required!" }));
+        setError((state) => ({ ...state, baitType: "Bait type is required!" }));
         console.log("Hi");
       }
        else if (species.length < 5) {
-        setError((state) => ({ ...state, species: "Minimum length is 5 characters!" }));
+        setError((state) => ({ ...state, baitType: "Minimum length is 5 characters!" }));
       }
        else {
-        setError((state) => ({ ...state, species: "Filled" }));
+        setError((state) => ({ ...state, baitType: "Filled" }));
       
       }
     } else if (field === "bait") {
@@ -47,7 +47,18 @@ export const useHandler = (initalState) => {
     
    }
  }
-    
+ else  if(field==="fishPicture"){
+  let img = e.currentTarget.value;
+if (img.length === 0) {
+setError((state) => ({ ...state, fishPicture: "Image is required" }));
+console.log("Hi");
+} else if (!img.match(/(http:|https:)+[^\s]+[\w]/)) {
+setError((state) => ({ ...state, fishPicture: "Must begin with http:// or https://!" }));
+} else {
+setError((state) => ({ ...state, fishPicture: "Filled" }));
+
+}
+}  
     else if (field === "story") {
         let story = e.currentTarget.value;
         console.log(story);
@@ -69,6 +80,8 @@ export const useHandler = (initalState) => {
       }
       
   };
-  let isFormValid = error.species ==="Filled"  && error.bait=== "Filled" && error.img=== "Filled" && error.story=== "Filled" && error.weight=== "Filled" 
+  
+  let isFormValid = error.baitType ==="Filled"  && error.bait=== "Filled" && error.img=== "Filled" && error.story=== "Filled" && error.weight=== "Filled" &&error.img=== "Filled" && error.fishPicture=== "Filled"
+  console.log(isFormValid)
   return [error, setItem, isFormValid];
 };

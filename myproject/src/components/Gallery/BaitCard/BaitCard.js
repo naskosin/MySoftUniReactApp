@@ -8,8 +8,8 @@ const BaitCard = ({bait})=>{
  
     return (
 <li className={styles.baitcard__li}><article className={styles.baitcard__article}>
-    <div className={styles.articleimgwrapper}>
-    <img className={styles.articleimg} src={bait.img} alt=""/></div>
+    <div className={styles.article__img__wrapper}>
+    <img className={styles.article__img} src={bait.img} alt=""/></div>
     
         
         <p className={styles.baitcard__paragraph}>{bait.bait}</p>

@@ -6,7 +6,7 @@ return(
     <p className={styles.top__description}><span className={styles.top__span}>Number: {index+1}  </span></p>
 <div className={styles.top__img__wrapper}>
     
-    <img src={fish.img} alt=""/> 
+    <img src={fish.fish_img} alt=""/> 
     
 </div>
 

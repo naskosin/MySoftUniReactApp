@@ -4,13 +4,13 @@ import styles from "./Create.module.css";
 import { useAuthContext } from "../../contexts/AuthContext";
 import { useHandler } from "../../hooks/useCreateEditValidator";
 import { useNavigate } from "react-router-dom";
-const initialState = { species: "", weight: "", bait: "", img: "", story: "" };
+const initialState = { species: "", weight: "", bait: "", img: "", fishPicture: "", story: "" };
 
 const Create = () => {
   const { userInfo } = useAuthContext();
   const [error, setError, isFormValid] = useHandler(initialState);
   let navigate = useNavigate();
-  console.log(error.species);
+  
 
   console.log(userInfo);
 
@@ -19,10 +19,10 @@ const Create = () => {
 
     const token = userInfo.accessToken;
     console.log(token);
-    const { species, bait, img, story, weight } = Object.fromEntries(
+    const { baitType, bait, img, fishPicture, story, weight } = Object.fromEntries(
       new FormData(e.currentTarget)
     );
-    let petData = { species, bait, img, story, weight };
+    let petData = { baitType, bait, img, fishPicture, story, weight };
     console.log(petData);
     baitService
       .createOne(token, petData)
@@ -41,29 +41,29 @@ const Create = () => {
         <h2>Create Catch</h2>
         <p className={styles.paragraph}>Add your fish of lifetime!</p>
 
-        <label htmlFor="title">Species:</label>
+        <label htmlFor="title">Bait Type:</label>
         <input
           type="text"
           id="title"
           placeholder="Trout"
-          name="species"
+          name="baitType"
           onBlur={setError}
           className={
-            error.species && error.species !== "Filled"
+            error.baitType && error.baitType !== "Filled"
               ? styles.inputerror
               : styles.input
           }
         />
-        {error.species && error.species !== "Filled" ? (
-          <p className={styles.errorParagraph}>{error.species}</p>
+        {error.baitType && error.baitType !== "Filled" ? (
+          <p className={styles.errorParagraph}>{error.baitType}</p>
         ) : (
           ""
         )}
 
-        <label htmlFor="painting-tech">Bait:</label>
+        <label htmlFor="bait">Bait:</label>
         <input
           type="text"
-          id="painting-tech"
+          id="bait"
           placeholder="Lure"
           name="bait"
           onBlur={setError}
@@ -79,7 +79,7 @@ const Create = () => {
           ""
         )}
 
-        <label htmlFor="picture">Fish picture:</label>
+        <label htmlFor="picture">Bait picture:</label>
         <input
           type="text"
           id="picture"
@@ -93,8 +93,21 @@ const Create = () => {
           }
         />
 
-        {error.img && error.img !== "Filled" ? (
-          <p className={styles.errorParagraph}>{error.img}</p>
+<label htmlFor="fishPicture">Fish picture:</label>
+        <input
+          type="text"
+          id="fishPicture"
+          placeholder="http://..."
+          name="fishPicture"
+          onBlur={setError}
+          className={
+            error.fishPicture && error.fishPicture!== "Filled"
+              ? styles.inputerror
+              : styles.input
+          }
+        />
+        {error.fishPicture && error.fishPicture !== "Filled" ? (
+          <p className={styles.errorParagraph}>{error.fishPicture}</p>
         ) : (
           ""
         )}
