@@ -12,12 +12,13 @@ main{
      width: 80%;
    
      margin-top: 153px;
-     margin-bottom: 153px;
+     margin-bottom: 80px;
      box-sizing: border-box;
  }
  .section__second{
      width: 100%;
      display: inline-block;
+     margin-top: 33px;
  }
 .main{
     margin: 40px 0;
@@ -108,14 +109,14 @@ object-fit: cover;
     text-align: right;
 }
 .no_fishes{
-    font-size: 30px;
+    font-size: 50px;
     color: blueviolet;
     text-align: center;
     margin: 50px auto;
 }
 .no_fishes span{
     font-size: 50px;
-    color: black;
+    color:white;
     font-style: italic;
 }
 p{
@@ -125,6 +126,8 @@ p{
 
   .loading{
       font-size: 3rem;
+      color: rgb(234, 16, 162);
+
   }
   @media only screen and (max-width: 600px) {
     body {

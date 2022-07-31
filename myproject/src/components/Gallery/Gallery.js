@@ -49,7 +49,7 @@ const Gallery = ()=>{
         <p className={styles.loading}>Loading...</p>
    
     </div>) 
-     :    <p>
+     :    <p className={styles.no_fishes}>
      <span>Ooops!</span> There's no fishes in the dock. Change your bait and
      try again!
    </p>

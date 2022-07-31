@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 import styles from "./Comments.module.css";
 
-export const Comment = ({ commentText, baitId}) => {
+export const Comment = ({ comment, baitId}) => {
     
   const navigate = useNavigate();
 
@@ -21,11 +21,11 @@ export const Comment = ({ commentText, baitId}) => {
   };
   const editComment = (e) => {
     e.preventDefault();
-    console.log(commentText._id)
-   let { comment } = Object.fromEntries(new FormData(e.currentTarget));
-    let text = { comment, email, baitId };
+    console.log(comment._id)
+   let { text } = Object.fromEntries(new FormData(e.currentTarget));
+    let commentData = { text, email, baitId };
     console.log(comment)
-   commentService.editOneComment(token, text, commentText._id)
+   commentService.editOneComment(token, commentData, comment._id)
    .then((data) => {
      console.log(data)
      
@@ -40,9 +40,9 @@ export const Comment = ({ commentText, baitId}) => {
  
  const deleteComment = () => {
    console.log("deleted")
-   console.log(commentText._id)
+   console.log(comment._id)
 
-   commentService.deleteOneComment(token, commentText._id);
+   commentService.deleteOneComment(token, comment._id);
    navigate(0);
  };
  
@@ -54,13 +54,13 @@ const cancelEdit =() =>{
   let viewMode = 
     (<div>
         <div className={styles.comment__text}>
-          <p>{commentText.comment}</p>
+          <p>{comment.text}</p>
         </div>
 
-        {userInfo.email === commentText.email ? 
+        {userInfo.email === comment.email ? 
           <div className={styles.comments__buttons}>
             <button className={styles.comments__buttons__delete} onClick={deleteComment}>Delete</button>
-            <button className={styles.comments__buttons__edit} onClick={edit} id={commentText._id}>
+            <button className={styles.comments__buttons__edit} onClick={edit} id={comment._id}>
               Edit
             </button>
           </div>: ""}</div>) ;
@@ -74,7 +74,7 @@ let editView =
 
     placeholder="This day"
     name="comment"
-    defaultValue={commentText.comment}
+    defaultValue={comment.text}
   ></textarea>
 
   <div className={styles.comments__buttons__edit__mode}>
@@ -94,7 +94,7 @@ let editView =
     <div className={styles.comments} >
         <div className={styles.comment}>
       <p className={styles.comment__user}>
-        User: <span>{commentText.email}</span>, commented
+        User: <span>{comment.email}</span>, commented
       </p>
       
       {editMode ? 
