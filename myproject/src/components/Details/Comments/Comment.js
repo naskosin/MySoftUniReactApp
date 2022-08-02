@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 import styles from "./Comments.module.css";
 
-export const Comment = ({ comment, baitId}) => {
+export const Comment = ({ comment, baitId, setComments}) => {
     
   const navigate = useNavigate();
 
@@ -42,8 +42,10 @@ export const Comment = ({ comment, baitId}) => {
    console.log("deleted")
    console.log(comment._id)
 
-   commentService.deleteOneComment(token, comment._id);
-   navigate(0);
+   commentService.deleteOneComment(token, comment._id)
+   .then(setComments((state) => state.filter(x=>x._id!==comment._id)));
+   
+   //navigate(0);
  };
  
 

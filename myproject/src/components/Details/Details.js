@@ -23,10 +23,10 @@ console.log(baitId)
 
 
   useEffect(() => {
-    commentService.getAllComments().then((res) => {
+    commentService.getAllComments(baitId).then((res) => {
       console.log(res)
-      let data = res.filter((x) => baitId === x.baitId);
-      commentsState(data);
+     
+      commentsState(res);
     });
     baitService.getOneBait(baitId ).then((res) => {
       setBait(res);
@@ -35,15 +35,14 @@ console.log(baitId)
 
   const createYourComment = (e) => {
     e.preventDefault();
-    let { comment } = Object.fromEntries(new FormData(e.currentTarget));
-
-    let text = { comment, email, baitId };
+    let { text } = Object.fromEntries(new FormData(e.currentTarget));
+console.log(text)
+    let commentData = {text, email, baitId };
     commentService
-      .createComment(token, text)
+      .createComment(token, commentData)
       .then((res) => commentsState((state) => [...state, res]));
       e.target.reset();
   };
-
 
 
   return (
@@ -55,9 +54,10 @@ console.log(baitId)
           {comments.map((x) => (
             <Comment
               key={x._id}
-              commentText={x}
+              comment={x}
               commentId={x._id}
               baitId= {baitId}
+              setComments={commentsState}
               
             />
           ))}
@@ -76,7 +76,7 @@ console.log(baitId)
             type="text"
             id="uses"
             placeholder="This day"
-            name="comment"
+            name="text"
           ></textarea>
 
           <button>Comment</button>
