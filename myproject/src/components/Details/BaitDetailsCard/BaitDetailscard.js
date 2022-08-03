@@ -28,7 +28,7 @@ const token = userInfo.accessToken;
           </div>
           <div className={styles.detailsdiv}>
             <p>
-              <span>Fish species: </span> {bait.species}{" "}
+              <span>Fish species: </span> {bait.baitType}{" "}
             </p>
             <p>
               <span className={styles.span}>Bait: </span> {bait.bait}

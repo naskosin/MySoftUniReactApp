@@ -25,7 +25,7 @@ let loggedNavigation =
     <Link className={styles.header__a} to="/">Home</Link>
   </li>
   <li>
-    <Link className={styles.header__a} to="/gallery">Gallery</Link>
+    <Link className={styles.header__a} to="/gallery">All Baits</Link>
   </li>
   <li>
     <Link className={styles.header__a} to="/create">Post bait</Link>
@@ -61,9 +61,9 @@ let loggedNavigation =
    <Link  className={styles.header__a} to="/gallery">Gallery</Link>
    </li>
 {/*  */}
-   {/* <li> */}
-     {/* <Link className={styles.header__a} to="/biggestfishes">Top 5</Link> */}
-   {/* </li> */}
+   <li>
+   <Link  className={styles.header__a} to="/biggestfishes">Biggest Fishes</Link>
+   </li>
  </ul>
 </nav>;
 

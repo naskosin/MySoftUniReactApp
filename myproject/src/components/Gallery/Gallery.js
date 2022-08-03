@@ -3,7 +3,7 @@ import {useEffect, useState} from 'react';
 import BaitCard from './BaitCard/BaitCard';
 import * as baitServices from '../../services/baitService';
 
-const Gallery = ()=>{
+const AllBaits = ()=>{
   const [baits, setBaits] = useState([]);
   useEffect(()=>{
 
@@ -64,4 +64,4 @@ const Gallery = ()=>{
 
     );
 }
-export default Gallery;
+export default AllBaits;
