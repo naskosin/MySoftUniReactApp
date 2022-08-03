@@ -37,7 +37,7 @@ let loggedNavigation =
   <li>
     <Link  className={styles.header__a} to="/biggestfishes">Biggest Fishes</Link>
   </li>
-  {/* <li><Link  className={styles.header__a} to="search">Search</Link></li> */}
+  <li><Link  className={styles.header__a} to="search">Search</Link></li>
   <li>
     <Link  className={styles.header__a} to="/mybaits">My baits</Link>
   </li>
@@ -60,7 +60,6 @@ let loggedNavigation =
    <li>
    <Link  className={styles.header__a} to="/gallery">Gallery</Link>
    </li>
-{/*  */}
    <li>
    <Link  className={styles.header__a} to="/biggestfishes">Biggest Fishes</Link>
    </li>

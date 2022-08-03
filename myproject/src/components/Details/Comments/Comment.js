@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 import styles from "./Comments.module.css";
 
-export const Comment = ({ comment, baitId, setComments}) => {
+export const Comment = ({ comment, baitId, comments, setComments}) => {
     
   const navigate = useNavigate();
 
@@ -24,14 +24,28 @@ export const Comment = ({ comment, baitId, setComments}) => {
     console.log(comment._id)
    let { text } = Object.fromEntries(new FormData(e.currentTarget));
     let commentData = { text, email, baitId };
-    console.log(comment)
+    console.log(text)
    commentService.editOneComment(token, commentData, comment._id)
    .then((data) => {
-     console.log(data)
+    
+        console.log(data.text)
+        let arr = comments;
+        arr.map((x) => {
+          if (x._id === comment._id) {
+            console.log(x._id);
+            console.log({x});
+            return x.text= data.text ;
+          }
+          return x;
+        });
+        
+        setComments(arr);
+        
+        setMode(false)
+      
+      });
      
-     });
      
-   navigate(0);
   }
  
  
@@ -45,7 +59,7 @@ export const Comment = ({ comment, baitId, setComments}) => {
    commentService.deleteOneComment(token, comment._id)
    .then(setComments((state) => state.filter(x=>x._id!==comment._id)));
    
-   //navigate(0);
+  
  };
  
 
@@ -75,7 +89,7 @@ let editView =
     type="text"
 
     placeholder="This day"
-    name="comment"
+    name="text"
     defaultValue={comment.text}
   ></textarea>
 
