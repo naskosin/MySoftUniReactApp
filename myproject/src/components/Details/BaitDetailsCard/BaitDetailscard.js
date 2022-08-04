@@ -14,7 +14,7 @@ const token = userInfo.accessToken;
  
     const deletePost = () => {
       
-        baitService.deleteOneBait(token, bait._id).then((data) => console.log(data));
+        baitService.deleteOneBait(token, bait._id).then((data) => console.log('deleted'));
         navigate("/");
       };
 

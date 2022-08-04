@@ -1,9 +1,11 @@
 import { isAuth } from "../../guards/isAuth";
 import * as baitService from "../../services/baitService";
-import styles from "./Create.module.css";
+
 import { useAuthContext } from "../../contexts/AuthContext";
 import { useHandler } from "../../hooks/useCreateEditValidator";
 import { useNavigate } from "react-router-dom";
+import styles from "./Create.module.css";
+
 const initialState = { species: "", weight: "", bait: "", img: "", fish_img: "", story: "" };
 
 const Create = () => {

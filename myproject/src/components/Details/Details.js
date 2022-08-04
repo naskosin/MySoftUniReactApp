@@ -35,6 +35,10 @@ const Details = () => {
     });
   }, []);
 
+ const deleteClick = ()=>{
+   
+ }
+
   const createYourComment = (e) => {
     e.preventDefault();
     let { text } = Object.fromEntries(new FormData(e.currentTarget));

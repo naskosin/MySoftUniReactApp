@@ -83,6 +83,7 @@
           font-size: 14px;
           font-family: 'Barlow', sans-serif;
           font-weight: 700;
+          display: inline;
       }
       
       .containertext>input {

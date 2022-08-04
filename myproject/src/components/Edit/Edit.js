@@ -135,7 +135,7 @@ const Edit = () => {
           ""
         )}
 
-        <label htmlFor="certificate">Story:</label>
+        <label className={styles.label} htmlFor="certificate">Story:</label>
         <textarea
           type="text"
           placeholder="This day..."
