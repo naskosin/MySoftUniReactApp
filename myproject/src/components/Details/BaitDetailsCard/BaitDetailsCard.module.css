@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Lobster&family=Playball&display=swap');
 
 
-.detailsdiv> p{
+.detailsdiv p{
 word-wrap: break-word;
  
   display: inline-block;
@@ -12,7 +12,7 @@ font-size: 20px;
   color: white;
   padding-left: 30px;
 }
-.detailsdiv> p:last-of-type{
+.detailsdiv p:last-of-type{
  padding-bottom: 40px;
 }
 .detailsdiv span{
@@ -36,7 +36,7 @@ font-size: 20px;
 .mainimgwrapper{
   height:100%;
   margin:0 ;
-  width:60%;
+  width:50%;
   overflow: hidden;
   display: inline-block;
   border-radius: 50px;
@@ -61,7 +61,7 @@ font-size: 20px;
 
 .detailsdiv{
   display:inline-block;
-  width:35%;
+  width:40%;
   background-color: lightskyblue;
   border-radius: 50px;
 

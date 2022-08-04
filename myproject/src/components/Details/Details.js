@@ -2,17 +2,22 @@ import { isAuth } from "../../guards/isAuth";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import BaitDetailsCard from "./BaitDetailsCard/BaitDetailscard";
-import styles from "./Details.module.css";
+
 import * as baitService from "../../services/baitService";
 import * as commentService from "../../services/commentService";
 import Comment from "./Comments/Comment";
 import { useAuthContext } from "../../contexts/AuthContext";
-
+import ConfirmDialog from "../Common/ConfirmDialog/ConfirmDialog";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import styles from "./Details.module.css";
 const Details = () => {
   const [bait, setBait] = useState([]);
   const [comments, commentsState] = useState([]);
   const { userInfo } = useAuthContext();
   const { baitId } = useParams();
+  const [showDeleteDialog, setShowDeleteDialog] = useState(false);
+ 
+
   console.log(baitId);
 
   const token = userInfo.accessToken;
@@ -43,6 +48,7 @@ const Details = () => {
 
   return (
     <>
+    <ConfirmDialog show={showDeleteDialog} / >
       {<BaitDetailsCard bait={bait} />}
       {comments.length > 0 ? (
         <section>
