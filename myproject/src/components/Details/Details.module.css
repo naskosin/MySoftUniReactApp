@@ -212,3 +212,9 @@ a {
 p {
   font-family: Lobster, sans-serif;
 }
+.modal{
+  color:brown
+}
+.modal__button__delete{
+background-color: red;
+}

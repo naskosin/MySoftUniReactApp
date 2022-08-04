@@ -5,8 +5,8 @@
     flex-wrap: nowrap;
     flex-direction: row;
     width: 80%;
-    margin: 20px auto;
-    margin-top: 170px;
+    margin: 200px auto 100px;
+    margin-top: 200px;
     background-color: lightskyblue;
     border-radius:50px;
 }

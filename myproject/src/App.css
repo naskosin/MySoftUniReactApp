@@ -25,7 +25,9 @@ main{
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
+.modal__button__delete .modal__button__delete{
+  background-color: red;
+}
 .App-link {
   color: #61dafb;
 }

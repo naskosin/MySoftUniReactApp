@@ -1,11 +1,12 @@
 import {Modal, Button} from 'react-bootstrap';
-
+import styles from './ConfirmDialog.module.css'
 
 
 
 const ConfirmDialog = ({
     show,
-    onClose
+    onClose, 
+    deleteBait
     
 }) => {
     return (
@@ -14,13 +15,14 @@ const ConfirmDialog = ({
                 <Modal.Title>Delete Bait</Modal.Title>
             </Modal.Header>
 
-            <Modal.Body>
-                <p>Are you sure you want to delete this post?</p>
+            <Modal.Body className={styles.modal} >
+                <p className={styles.modal} >Are you sure you want to delete this post?</p>
             </Modal.Body>
 
             <Modal.Footer>
-                <Button variant="secondary" >Close</Button>
-                <Button variant="primary" >Delete</Button>
+                <Button variant="secondary" onClick={onClose} >Cancel</Button>
+                <Button variant="custom" 
+                className={styles.btncustom} onClick={deleteBait}>Delete</Button>
             </Modal.Footer>
         </Modal>
     );
