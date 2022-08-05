@@ -2,14 +2,14 @@ import { isAuth } from "../../guards/isAuth";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import BaitDetailsCard from "./BaitDetailsCard/BaitDetailscard";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 import * as baitService from "../../services/baitService";
 import * as commentService from "../../services/commentService";
 import Comment from "./Comments/Comment";
 import { useAuthContext } from "../../contexts/AuthContext";
 import ConfirmDialog from "../Common/ConfirmDialog/ConfirmDialog";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./Details.module.css";
 
 const Details = () => {
@@ -19,7 +19,6 @@ const Details = () => {
   const { baitId } = useParams();
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const navigate = useNavigate();
-
 
   console.log(baitId);
 
@@ -38,14 +37,14 @@ const Details = () => {
     });
   }, []);
 
- const onClose = ()=>{
-  setShowDeleteDialog(false)
- }
- const deleteBait = () => {
+
+  const deleteBait = () => {
+    baitService
+      .deleteOneBait(token, bait._id)
+      .then((data) => 
+    navigate("/gallery"));
+  };
   
-  baitService.deleteOneBait(token, bait._id).then((data) => console.log('deleted'));
-  navigate("/gallery");
-};
   const createYourComment = (e) => {
     e.preventDefault();
     let { text } = Object.fromEntries(new FormData(e.currentTarget));
@@ -59,8 +58,17 @@ const Details = () => {
 
   return (
     <>
-    <ConfirmDialog show={showDeleteDialog} onClose={onClose} deleteBait={deleteBait} />
-      {<BaitDetailsCard bait={bait} setShowDeleteDialog={setShowDeleteDialog} />}
+      <ConfirmDialog
+        show={showDeleteDialog}
+        onClose={() => setShowDeleteDialog(false)}
+        onSave={deleteBait}
+      />
+      {
+        <BaitDetailsCard
+          bait={bait}
+          setShowDeleteDialog={setShowDeleteDialog}
+        />
+      }
       {comments.length > 0 ? (
         <section>
           {comments.map((x) => (

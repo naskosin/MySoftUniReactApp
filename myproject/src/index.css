@@ -12,6 +12,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.modal__button__delete .modal__button__delete{
-  background-color: red;
+.btn-custom{
+  background-color: #e90b0b;
+}
+.btn-custom:hover{
+  background-color: #a70808; 
 }

@@ -9,6 +9,15 @@
 main{
   background-color: black;
 }
+.btncustom{
+  background-color: #e90b0b;
+}
+.btncustom:hover{
+    background-color: #e90b0b; 
+}
+.background{
+background-color: lightskyblue;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -25,9 +34,7 @@ main{
   font-size: calc(10px + 2vmin);
   color: white;
 }
-.modal__button__delete .modal__button__delete{
-  background-color: red;
-}
+
 .App-link {
   color: #61dafb;
 }

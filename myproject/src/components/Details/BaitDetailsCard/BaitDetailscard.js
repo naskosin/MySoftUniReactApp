@@ -41,7 +41,7 @@ const ownerButtons = <div>
           </div>
           <div className={styles.detailsdiv}>
             <p>
-              <span>Fish species: </span> {bait.baitType}{" "}
+              <span>Bait type: </span> {bait.baitType}{" "}
             </p>
             <p>
               <span className={styles.span}>Bait: </span> {bait.bait}
@@ -58,9 +58,8 @@ const ownerButtons = <div>
             </p>
             {userInfo._id === bait._ownerId ? 
               ownerButtons
-             : (
-              ""
-            )}
+             : 
+              " "}
           </div>
         </article>
       </section>
