@@ -1,7 +1,9 @@
 import Header from "./components/Header/Header";
 import Search from "./components/Search/Search";
 import About from "./components/About/About";
+import LoggedGuardedRoute from "./components/Common/LoggedGuardedRoute";
 import BiggestFishes from "./components/BiggestFishes/BiggestFishes";
+import GuardedRoute from "./components/Common/GuardedRoutes";
 import MyBaits from "./components/MyBaits/MyBaits";
 import { AuthProvider } from "./contexts/AuthContext";
 import { NotifyProvider } from "./contexts/NotifyContext";
@@ -22,31 +24,37 @@ function App() {
   return (
     <AuthProvider>
       <NotifyProvider>
-      <div>
-        <Header />
+        <div>
+          <Header />
 
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/create" element={<Create />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/gallery" element={<AllBaits />} />
-            <Route path="/gallery/:baitId" element={<Details />} />
-            <Route path="*" element={<PageNotFound />} />
-            <Route path="/contacts" element={<Contacts />} />
-            <Route path="/About" element={<About />} />
-            <Route path="/gallery/edit/:baitId" element = {<Edit />}/>
-            <Route path="/search" element = {<Search />}/>
-            <Route path="/mybaits" element={<MyBaits/>}/>
-            <Route path="/biggestfishes" element={<BiggestFishes />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+
+              <Route path="/gallery" element={<AllBaits />} />
+              <Route path="*" element={<PageNotFound />} />
+              <Route path="/contacts" element={<Contacts />} />
+              <Route path="/About" element={<About />} />
+              <Route path="/search" element={<Search />} />
+              <Route path="/biggestfishes" element={<BiggestFishes />} />
+
+              <Route element={<LoggedGuardedRoute />}>
+                <Route path="/register" element={<Register />} />
+                <Route path="/login" element={<Login />} />
+              </Route>
+
+              <Route element={<GuardedRoute />}>
+                <Route path="/create" element={<Create />} />
+                <Route path="/gallery/:baitId" element={<Details />} />
+                <Route path="/mybaits" element={<MyBaits />} />
+                <Route path="/gallery/edit/:baitId" element={<Edit />} />
+              </Route>
+            </Routes>
+          </main>
+          <Footer />
+        </div>
       </NotifyProvider>
     </AuthProvider>
-    
   );
 }
 

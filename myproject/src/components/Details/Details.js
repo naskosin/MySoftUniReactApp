@@ -1,4 +1,3 @@
-import { isAuth } from "../../guards/isAuth";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import BaitDetailsCard from "./BaitDetailsCard/BaitDetailscard";
@@ -37,14 +36,12 @@ const Details = () => {
     });
   }, []);
 
-
   const deleteBait = () => {
     baitService
       .deleteOneBait(token, bait._id)
-      .then((data) => 
-    navigate("/gallery"));
+      .then((data) => navigate("/gallery"));
   };
-  
+
   const createYourComment = (e) => {
     e.preventDefault();
     let { text } = Object.fromEntries(new FormData(e.currentTarget));
@@ -105,4 +102,4 @@ const Details = () => {
     </>
   );
 };
-export default isAuth(Details);
+export default Details;

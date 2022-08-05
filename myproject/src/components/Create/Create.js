@@ -160,4 +160,4 @@ const Create = () => {
     </div>
   );
 };
-export default isAuth(Create);
+export default Create;
