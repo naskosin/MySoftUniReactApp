@@ -6,6 +6,9 @@ export function getAllComments(baitId){
      .then(res=>res.json())
    
  }
+
+
+
  export async function createComment(token, text){
     let res = await fetch('https://nasko-fish.herokuapp.com/data/comments', {
        method: 'POST',

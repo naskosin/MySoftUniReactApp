@@ -5,6 +5,13 @@ export function getAllBaits(){
       .then(res=>res.json())
     
   }
+  export function getSearchedBaits(searchText){
+    const query= encodeURIComponent(`bait LIKE "${searchText}"`)
+  
+     return fetch(`https://nasko-fish.herokuapp.com/data/fishes?where=${query}`)
+       .then(res=>res.json())
+     
+   }
 
   export function getOneBait(id){
     return fetch(`${apiUrl}/${id}`)
