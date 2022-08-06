@@ -7,11 +7,15 @@ import * as baitService from "../../services/baitService";
 import * as commentService from "../../services/commentService";
 import Comment from "./Comments/Comment";
 import { useAuthContext } from "../../contexts/AuthContext";
+import { useCommentValidator } from "../../hooks/useCommentValidator";
 import ConfirmDialog from "../Common/ConfirmDialog/ConfirmDialog";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./Details.module.css";
 
 const Details = () => {
+  const initialState  = { text: "" };
+  const [error, setError, isFormValid] = useCommentValidator(initialState);
+
   const [bait, setBait] = useState([]);
   const [comments, commentsState] = useState([]);
   const { userInfo } = useAuthContext();
@@ -94,9 +98,10 @@ const Details = () => {
             id="uses"
             placeholder="This day"
             name="text"
+            onBlur={setError}
           ></textarea>
-
-          <button>Comment</button>
+ {error.text !== "Filled" && error.text ? <p className={styles.errorParagraph}>{error.text}</p> : ""}
+          <button disabled={!isFormValid} className={styles.button}>Comment</button>
         </form>
       </div>
     </>

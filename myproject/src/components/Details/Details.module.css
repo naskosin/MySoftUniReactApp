@@ -132,3 +132,14 @@ p {
 .modal__button__delete{
 background-color: red;
 }
+.inputerror {
+  border: 2px solid crimson;
+  border-left: 10px solid crimson;
+  margin: 3px 0 7px;
+  font-size: 0.8rem;
+  color: #656880;
+}
+
+.errorParagraph {
+  color: crimson;
+}

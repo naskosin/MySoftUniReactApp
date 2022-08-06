@@ -1,31 +1,19 @@
 import { useState } from "react";
 
+export const useCommentValidator = (initialState) => {
+  const [error, setError] = useState(initialState);
 
+  const setItem = (e) => {
+    let text = e.currentTarget.value;
+    console.log(text.length);
+    if (text.length === 0) {
+      setError({ text: "Text is required!" });
+    } else {
+      setError({ text: "Filled" });
+    }
+  };
+  let isFormValid = error.text === "Filled";
+  console.log(isFormValid);
 
-
-export const useValidateHandler=(initialState )=>{
- 
-
-const [error, setError] = useState(initialState);
-
-const setItem = (e) =>{
-
-
-   let field = e.currentTarget.name;
-  
-    let email = e.currentTarget.value;
-   if (email.length === 0) {
-    setError((state) => ({ ...state, email: "Invalid email!" }));
-    
-  } 
-    
-
-let isFormValid = error.email ==="Filled" 
-console.log(isFormValid)
-
-
-return [error, setItem,  isFormValid]
-
-
-}
-}
+  return [error, setItem, isFormValid];
+};
