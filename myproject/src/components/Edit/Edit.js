@@ -129,8 +129,8 @@ const Edit = () => {
           }
         />
 
-        {error.img && error.img !== "Filled" ? (
-          <p className={styles.errorParagraph}>{error.img}</p>
+        {error.fish_img && error.fish_img !== "Filled" ? (
+          <p className={styles.errorParagraph}>{error.fish_img}</p>
         ) : (
           ""
         )}

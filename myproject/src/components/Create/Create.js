@@ -94,6 +94,11 @@ const Create = () => {
               : styles.input
           }
         />
+        {error.img && error.img !== "Filled" ? (
+          <p className={styles.errorParagraph}>{error.img}</p>
+        ) : (
+          ""
+        )}
 
 <label htmlFor="fish_img">Fish picture:</label>
         <input

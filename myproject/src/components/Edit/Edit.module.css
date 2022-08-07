@@ -116,6 +116,9 @@
           padding: 20px;
 
       }
+      .errorParagraph {
+        color: crimson;
+      }
       #input-error{
           background: rgb(231, 94, 122);
           color:white;
