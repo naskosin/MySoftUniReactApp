@@ -12,7 +12,7 @@ return(
 </div>
 
 <p className={styles.top__description__bottom}><span className={styles.top__span__bottom}>Weight: </span>{fish.weight}</p>
-{isLogged ? <span className={styles.top__span__bottom}>Bait: {fish.bait}</span>:<span className={styles.top__span__bottom}>Bait: You must be logged, to see it!</span> }
+<p className={styles.top__description__bottom}><span className={styles.top__span__bottom}>Bait: </span>{isLogged ?  `${fish.bait}`: "You must be logged, to see it!" }</p>
 
 </article>
 )
