@@ -19,6 +19,7 @@ main{
      width: 100%;
      display: inline-block;
      margin-top: 33px;
+     margin: 0 auto ;
  }
 .main{
     margin: 40px 0;
@@ -28,7 +29,7 @@ main{
      border-radius: 50px;
  }
 
-ul{
+ .section__second ul{
     padding:0;
     margin: 0;
     
