@@ -1,11 +1,12 @@
 import styles from './Search.module.css'
 import * as baitServices from '../../services/baitService';
 import BaitCard from '../Gallery/BaitCard/BaitCard';
+
 import { useState } from 'react';
 
 
 const Search = ()=>{
-    const [baits, setBaits] = useState([]);
+    const [baits, setBaits] = useState();
 const searchHandler = (e) =>{
     e.preventDefault();
     const {searchText} =  Object.fromEntries(new FormData(e.currentTarget));
@@ -23,12 +24,12 @@ return(<section className={styles.section__main}>
 <section className={styles.section__second}>
     
     <div >
-    <ul >
+   {baits ? <ul >
  {  baits.length>0 ?  
 baits.map(x=><BaitCard bait={x} key={x._id}/>)
 :
 <div className={styles.no_fishes}><p><span>Ooops!</span> There's no fishes from searched species!</p></div>}
-</ul> 
+</ul> : "" }
 </div>
 
 
