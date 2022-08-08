@@ -31,8 +31,9 @@ const Edit = () => {
     console.log(petData);
     baitService
       .editOneBait(token, petData, baitId)
-      .then((data) => console.log(data));
-    navigate(`/gallery/${baitId}`);
+      .then((data) => {console.log(data);
+      
+    navigate(`/gallery/${baitId}`)});
   };
   useEffect(() => {
     baitService
@@ -47,11 +48,11 @@ const Edit = () => {
 
   return (
     <div className={styles.createcontainerinfo}>
-      <img src="/assets/01-azores-baiting.jpg" alt="image" />
+      <img src="/assets/03.png" alt="image" />
 
       <form className={styles.containertext} onSubmit={editOne}>
         <h2>Edit Catch</h2>
-        <p>Add your bait of lifetime!</p>
+        <p className={styles.containertext__p }>Add your bait of lifetime!</p>
 
         <label htmlFor="title">Bait Type:</label>
         <input

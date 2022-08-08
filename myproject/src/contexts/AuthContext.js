@@ -22,7 +22,7 @@ export const AuthProvider = ({children}) =>{
         setUserInfo(authData)
       }
     const logout=()=>{
-        setUserInfo( {accessToken: '', email: '', _id: ''})
+        setUserInfo(initialState)
     }
 
      return(

@@ -7,29 +7,34 @@ import { useAuthContext } from "../../contexts/AuthContext";
 
 import { useValidateHandler } from "../../hooks/useAuthValidator";
 import { useNavigate } from "react-router-dom";
-
-
+import { useRef } from "react";
 
 const Login = () => {
-   const {  login } =useAuthContext();
-  const {errorNotification, notification } = useNotifyContext();
- 
+
+
+
+  const { login } = useAuthContext();
+  const { errorNotification, notification } = useNotifyContext();
+
   const initialState = { email: "", password: "", rePassword: "Filled" };
   const [error, setError, isFormValid] = useValidateHandler(initialState);
-  
-  
-  
+
   const navigate = useNavigate();
+
+  const refEmail = useRef()
+
+
 
   const onLogin = (e) => {
     e.preventDefault();
+    console.log(refEmail.current.value)
     let formData = new FormData(e.currentTarget);
     let email = formData.get("email");
 
     let password = formData.get("password");
 
     authService
-      .login(email, password)
+      .login(refEmail.current.value, password)
       .then((authData) => {
         login(authData);
         console.log(authData);
@@ -37,7 +42,7 @@ const Login = () => {
       })
       .catch((err) => {
         notification(err);
-        console.log(errorNotification)
+        console.log(errorNotification);
       });
   };
 
@@ -57,6 +62,7 @@ const Login = () => {
             placeholder="ivan_00"
             name="email"
             onBlur={setError}
+            ref={refEmail}
             className={
               error.email !== "Filled" && error.email
                 ? styles.inputerror

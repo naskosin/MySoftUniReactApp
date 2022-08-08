@@ -3,10 +3,12 @@ import { useState } from 'react';
 import FishCard from './FishCard/FishCard';
 import styles from './BiggestFishes.module.css';
 import * as baitService from '../../services/baitService';
+import { useAuthContext } from "../../contexts/AuthContext";
 
 
 const BiggestFishes =()=>{
-
+    const {isLogged} = useAuthContext();
+    console.log(isLogged)
 const [fishes, setFishes] = useState([]);
 useEffect(()=>{
     baitService.getAllBaits()

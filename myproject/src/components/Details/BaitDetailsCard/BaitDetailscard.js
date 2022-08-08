@@ -16,7 +16,7 @@ const deleteClick =()=>{
   setShowDeleteDialog(true)
 }
  
-const ownerButtons = <div>
+const ownerButtons = <div className={styles.ownerButtons}>
 <button  className={styles.edit}>
   <Link to={`/gallery/edit/${bait._id}`}>Edit article</Link>
 </button>

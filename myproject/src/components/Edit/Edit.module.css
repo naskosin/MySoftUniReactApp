@@ -57,24 +57,25 @@
           color: #1A2250;
       }
       
-      .containertext>p {
+      .containertext__p {
           font-size: 14px;
           color: #3B4169;
           margin: 2px 0;
           margin-bottom: 15px;
       }
       
-      .containertext>input,
-      .containertext>textarea,
-      .containertext>button {
+      .containertext input,
+      .containertext textarea,
+      .containertext button {
           width: 100%;
           border: none;
           padding: 12px;
           border-radius: 3px;
           
       }
-      .containertext>textarea{
+      .containertext textarea{
           border: solid 2px lightskyblue;
+          box-sizing: content-box;
       }
       
       label {
