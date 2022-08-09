@@ -2,7 +2,7 @@ import styles from "./FishCard.module.css";
 import { useAuthContext } from "../../../contexts/AuthContext";
 const FishCard = ({fish, index}) =>{
     const {isLogged} = useAuthContext();
-    console.log(isLogged)
+
 return(
     <article className={styles.top} >
     <p className={styles.top__description}><span className={styles.top__span}>Number: {index+1}  </span></p>

@@ -2,12 +2,10 @@ import styles from "./Login.module.css";
 import * as authService from "../../services/authService";
 import { isNotAuth } from "../../guards/isNotAuth";
 import { useNotifyContext } from "../../contexts/NotifyContext";
-
 import { useAuthContext } from "../../contexts/AuthContext";
-
 import { useValidateHandler } from "../../hooks/useAuthValidator";
 import { useNavigate } from "react-router-dom";
-import { useRef } from "react";
+
 
 const Login = () => {
 
@@ -21,20 +19,20 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  const refEmail = useRef()
+
 
 
 
   const onLogin = (e) => {
     e.preventDefault();
-    console.log(refEmail.current.value)
+  
     let formData = new FormData(e.currentTarget);
     let email = formData.get("email");
 
     let password = formData.get("password");
 
     authService
-      .login(refEmail.current.value, password)
+      .login(email, password)
       .then((authData) => {
         login(authData);
         console.log(authData);
@@ -62,7 +60,6 @@ const Login = () => {
             placeholder="ivan_00"
             name="email"
             onBlur={setError}
-            ref={refEmail}
             className={
               error.email !== "Filled" && error.email
                 ? styles.inputerror
