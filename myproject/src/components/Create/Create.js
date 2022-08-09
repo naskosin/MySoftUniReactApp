@@ -6,13 +6,21 @@ import { useHandler } from "../../hooks/useCreateEditValidator";
 import { useNavigate } from "react-router-dom";
 import styles from "./Create.module.css";
 
-const initialState = { species: "", weight: "", bait: "", img: "", fish_img: "", story: "" };
+const initialState = {
+  species: "",
+  weight: "",
+  bait: "",
+  img: "",
+  fish_img: "",
+  story: "",
+};
 
 const Create = () => {
   const { userInfo } = useAuthContext();
+
   const [error, setError, isFormValid] = useHandler(initialState);
-  let navigate = useNavigate();
   
+  let navigate = useNavigate();
 
   console.log(userInfo);
 
@@ -100,7 +108,7 @@ const Create = () => {
           ""
         )}
 
-<label htmlFor="fish_img">Fish picture:</label>
+        <label htmlFor="fish_img">Fish picture:</label>
         <input
           type="text"
           id="fish_img"
@@ -108,7 +116,7 @@ const Create = () => {
           name="fish_img"
           onBlur={setError}
           className={
-            error.fish_img && error.fish_img!== "Filled"
+            error.fish_img && error.fish_img !== "Filled"
               ? styles.inputerror
               : styles.input
           }
