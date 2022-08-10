@@ -49,12 +49,14 @@
 }
 
 .paragraph {
-    font-size: 14px;
+    font-size:18px;
     color: #3B4169;
     margin: 2px 0;
     margin-bottom: 15px;
 }
-
+.paragraph a{
+    color: #190c4d;
+}
 
 .containertext>button {
     width: 100%;
@@ -110,16 +112,7 @@ span {
     font-size: 12px;
 }
 
-.cardnoaccount {
-    padding: 1rem 1rem;
-    text-align: center;
-    font-size: .875rem;
-    color: #190c4d;
-}
 
-.card-no-account>p>a {
-    color: #8C1415;
-}
 
 
 .button{

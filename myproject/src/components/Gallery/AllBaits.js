@@ -1,4 +1,4 @@
-import styles from "./Gallery.module.css";
+import styles from "./AllBaits.module.css";
 import { useEffect, useState } from "react";
 import BaitCard from "./BaitCard/BaitCard";
 import * as baitServices from "../../services/baitService";

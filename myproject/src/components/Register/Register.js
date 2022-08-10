@@ -32,7 +32,7 @@ authService
           notification(err);
         });
     } else {
-      notification("Error rePassword")
+      notification("Password and repeat password do not match!!!")
      
     }
 
@@ -41,7 +41,7 @@ authService
     <section id="register-container" className={styles.registercontainer}>
       <div className={styles.registercontainerinfo}>
         <img
-          src="nRyuki-Spearhead-80S.jpeg"
+          src="assets/Ryuki-Spearhead-80S.jpeg"
           alt=""
         />
 

@@ -1,10 +1,9 @@
-import { isAuth } from "../../guards/isAuth";
+import styles from "./PostBait.module.css";
 import * as baitService from "../../services/baitService";
-
 import { useAuthContext } from "../../contexts/AuthContext";
 import { useHandler } from "../../hooks/useCreateEditValidator";
 import { useNavigate } from "react-router-dom";
-import styles from "./Create.module.css";
+
 
 const initialState = {
   species: "",
@@ -15,7 +14,7 @@ const initialState = {
   story: "",
 };
 
-const Create = () => {
+const PostBait = () => {
   const { userInfo } = useAuthContext();
 
   const [error, setError, isFormValid] = useHandler(initialState);
@@ -48,7 +47,7 @@ const Create = () => {
       <img src="/assets/03.png" alt="Loading..." />
 
       <form className={styles.containertext} onSubmit={create}>
-        <h2>Create Catch</h2>
+        <h2>Post Bait</h2>
         <p className={styles.paragraph}>Add your fish of lifetime!</p>
 
         <label htmlFor="title">Bait Type:</label>
@@ -167,10 +166,10 @@ const Create = () => {
         )}
 
         <button disabled={!isFormValid} className={styles.button}>
-          Create
+          Post
         </button>
       </form>
     </div>
   );
 };
-export default Create;
+export default PostBait;
