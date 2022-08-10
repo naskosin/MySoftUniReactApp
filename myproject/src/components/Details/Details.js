@@ -50,6 +50,7 @@ const Details = () => {
         notification(err);
         console.log(errorNotification)})
   }
+
   const createYourComment = (e) => {
     e.preventDefault();
     let { text } = Object.fromEntries(new FormData(e.currentTarget));
@@ -61,6 +62,21 @@ const Details = () => {
     e.target.reset();
   };
 
+  const deleteComment = (commentId ) => {
+    commentService.deleteOneComment(token,  commentId)
+    .then(setComments((state) => state.filter(x=>x._id!== commentId))); 
+  };
+
+  const editComment = (e) => {
+     e.preventDefault();
+ 
+    let { text } = Object.fromEntries(new FormData(e.currentTarget));
+    
+     console.log(text)
+   
+  }
+      
+    
   return (
     <>
       <ConfirmDialog
@@ -81,9 +97,8 @@ const Details = () => {
               key={x._id}
               comment={x}
               commentId={x._id}
-              baitId={baitId}
-              comments={comments}
-              setComments={setComments}
+              deleteComment={()=>deleteComment(x._id)}
+              editComment={(e)=>editComment(e,x._id)}
             />
           ))}
         </section>
