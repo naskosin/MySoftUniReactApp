@@ -11,8 +11,7 @@ export const Comment = ({ comment, deleteComment, editComment}) => {
 
   const { userInfo } = useAuthContext();
   const token = userInfo.accessToken;
-  console.log(token)
-  const email = userInfo.email;
+
   const [editMode, setMode] = useState(false);
   const edit = () => {
     setMode(true);
@@ -85,7 +84,7 @@ let editView =
   ></textarea>
 
   <div className={styles.comments__buttons__edit__mode}>
-    <button  className={styles.comments__buttons__edit__mode__save} onClick={cancelEdit} >
+    <button  className={styles.comments__buttons__edit__mode__save}  >
       Save 
     </button>
     <button className={styles.comments__buttons__edit__mode__cancel} onClick ={cancelEdit}>

@@ -67,15 +67,18 @@ const Details = () => {
     .then(setComments((state) => state.filter(x=>x._id!== commentId))); 
   };
 
-  const editComment = (e) => {
+  const editComment = (e, commentId) => {
      e.preventDefault();
  
     let { text } = Object.fromEntries(new FormData(e.currentTarget));
+    let commentData = { text, email, baitId };
+    console.log(text)
+   commentService.editOneComment(token, commentData, commentId)
+   .then((data) => {navigate(0)
     
-     console.log(text)
    
-  }
-      
+  });
+}    
     
   return (
     <>
