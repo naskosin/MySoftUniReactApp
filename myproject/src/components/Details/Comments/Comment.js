@@ -74,7 +74,7 @@ const cancelEdit =() =>{
     
 
 let editView =
-(<form className={styles.edit__mode} onSubmit={editComment} >
+(<form className={styles.edit__mode} onSubmit={editComment } >
   <textarea 
     type="text"
 
