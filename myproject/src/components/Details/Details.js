@@ -40,7 +40,7 @@ const Details = () => {
     baitService.getOneBait(baitId).then((res) => {
       setBait(res);
     });
-  }, []);
+  },);
 
   const deleteBait = () => {
     baitService
@@ -74,7 +74,7 @@ const Details = () => {
     let commentData = { text, email, baitId };
     console.log(text)
    commentService.editOneComment(token, commentData, commentId)
-   .then((data) => {navigate(0)
+   .then(() => {navigate(0)
     
    
   });

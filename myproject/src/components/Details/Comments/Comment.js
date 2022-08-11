@@ -10,8 +10,7 @@ export const Comment = ({ comment, deleteComment, editComment}) => {
 
 
   const { userInfo } = useAuthContext();
-  const token = userInfo.accessToken;
-
+ 
   const [editMode, setMode] = useState(false);
   const edit = () => {
     setMode(true);
@@ -74,7 +73,7 @@ const cancelEdit =() =>{
     
 
 let editView =
-(<form className={styles.edit__mode} onSubmit={editComment } >
+(<form className={styles.edit__mode} onSubmit={editComment} >
   <textarea 
     type="text"
 

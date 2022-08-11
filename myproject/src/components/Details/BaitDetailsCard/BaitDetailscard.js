@@ -1,13 +1,12 @@
 import styles from './BaitDetailsCard.module.css';
 import { useAuthContext } from '../../../contexts/AuthContext';
-import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 
 
 const BaitDetailsCard =({bait,  setShowDeleteDialog})=>{
 const { userInfo } = useAuthContext();
-const token = userInfo.accessToken;
+
 
 
 const deleteClick =()=>{
@@ -30,7 +29,7 @@ const ownerButtons = <div className={styles.ownerButtons}>
 <section className={styles.sectionmain}>
         <article className={styles.main}>
           <div className={styles.mainimgwrapper}>
-            <img src={bait.img} className={styles.mainimg} alt="No picture" />
+            <img src={bait.img} className={styles.mainimg} alt="Bait" />
           </div>
           <div className={styles.detailsdiv}>
             <p>
