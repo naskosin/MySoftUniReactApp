@@ -12,7 +12,7 @@ const Header =(
   const navigate = useNavigate();
 const {userInfo, logout} =useContext(AuthContext);
 let token = userInfo.accessToken;
-const {errorNotification, notification } = useNotifyContext();
+const {errorNotification} = useNotifyContext();
 const logOut = () =>{
   authService.loginOut(token)
   .then(res=>{console.log(res)
@@ -24,7 +24,7 @@ const logOut = () =>{
 let loggedNavigation =  
   
 <nav className={styles.isLogged}>
- <p className={styles.username} >Hi, {userInfo.email}!</p> 
+ <p className={styles.username} >Hi, <span className={styles.username__span}>{userInfo.email}</span>!</p> 
 <ul>
   <li>
     <Link className={styles.header__a} to="/">Home</Link>
@@ -33,7 +33,7 @@ let loggedNavigation =
     <Link className={styles.header__a} to="/allbaits">All Baits</Link>
   </li>
   <li>
-    <Link className={styles.header__a} to="/create">Post bait</Link>
+    <Link className={styles.header__a} to="/postbait">Post bait</Link>
   </li>
   
   <li>

@@ -55,12 +55,15 @@
         }
         
         .paragraph {
-            font-size: 14px;
+            font-size:18px;
             color: #3B4169;
             margin: 2px 0;
             margin-bottom: 15px;
         }
-        
+        .paragraph a{
+            color: rgb(234, 16, 162);
+
+        }
        
         .containertext>button {
             width: 100%;

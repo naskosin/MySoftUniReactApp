@@ -42,7 +42,7 @@ const AllBaits = () => {
                </ul></div>
             : (
               <p className={styles.no_fishes}>
-                <span>Ooops!</span> There's no fishes in the dock. Change your
+                <span>Ooops!</span> There's no baits in the gallery. Post your
                 bait and try again!
               </p>
             )) :

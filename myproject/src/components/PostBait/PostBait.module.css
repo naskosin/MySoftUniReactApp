@@ -5,13 +5,12 @@
   padding-top: 30px;
   padding-bottom: 20px;
   border: 10ch;
-
 }
 
 .createcontainerinfo {
   background-color: #fff;
   width: 80%;
-  box-sizing:content-box;
+  box-sizing: content-box;
 
   display: grid;
   grid-template-columns: 40% 60%;
@@ -40,15 +39,12 @@
   place-items: center;
   line-height: 1.5;
   left: 28%;
-  
 }
 
 .containertext {
   padding: 10px;
   text-align: center;
   width: 60%;
-
-
 }
 
 .containertext h2 {
@@ -65,17 +61,20 @@
   text-align: center;
 }
 
-.containertext textarea,
+
 .containertext button {
   width: 100%;
   border: none;
   padding: 12px;
   border-radius: 3px;
 }
-.containertext textarea {
+.textarea {
   border: solid 2px lightskyblue;
-  box-sizing:content-box;
-
+  box-sizing: content-box;
+  width: 100%;
+  border: none;
+  padding: 12px;
+  border-radius: 3px;
 }
 
 .containertext label {
@@ -84,13 +83,11 @@
   font-size: 14px;
   font-family: "Barlow", sans-serif;
   font-weight: 700;
-margin:  0 0 0 20px ;
-text-align: center;
-
-  
+  margin: 0 0 0 20px;
+  text-align: center;
 }
 
-.containertext  .createbtn {
+.containertext .createbtn {
   background-color: #19bec2;
   display: block;
   color: #fff;
@@ -111,7 +108,7 @@ text-align: center;
   background-color: lightgrey;
   padding: 20px;
 }
-input {
+.input {
   border: 2px solid lightskyblue;
   margin: 3px 0 7px;
   font-size: 0.8rem;
@@ -119,8 +116,7 @@ input {
   width: 100%;
   padding: 12px;
   border-radius: 3px;
-  box-sizing:content-box;
-
+  box-sizing: content-box;
 }
 
 .inputerror {
@@ -129,6 +125,8 @@ input {
   margin: 3px 0 7px;
   font-size: 0.8rem;
   color: #656880;
+  width: 100%;
+  box-sizing: content-box;
 }
 
 .errorParagraph {

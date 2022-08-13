@@ -1,6 +1,5 @@
 import styles from "./Login.module.css";
 import * as authService from "../../services/authService";
-import { isNotAuth } from "../../guards/isNotAuth";
 import { useNotifyContext } from "../../contexts/NotifyContext";
 import { useAuthContext } from "../../contexts/AuthContext";
 import { useValidateHandler } from "../../hooks/useAuthValidator";
@@ -12,7 +11,7 @@ const Login = () => {
 
 
   const { login } = useAuthContext();
-  const { errorNotification, notification } = useNotifyContext();
+  const {  notification } = useNotifyContext();
 
   const initialState = { email: "", password: "", rePassword: "Filled" };
   const [error, setError, isFormValid] = useValidateHandler(initialState);
@@ -40,7 +39,7 @@ const Login = () => {
       })
       .catch((err) => {
         notification(err);
-        console.log(errorNotification);
+  
       });
   };
 
@@ -67,7 +66,7 @@ const Login = () => {
             }
           />
           {error.email !== "Filled" && error.email ? (
-            <p id="errors">{error.email}</p>
+            <p className={styles.errorParagraph} id="errors">{error.email}</p>
           ) : (
             ""
           )}
@@ -104,4 +103,4 @@ const Login = () => {
     </section>
   );
 };
-export default isNotAuth(Login);
+export default Login;

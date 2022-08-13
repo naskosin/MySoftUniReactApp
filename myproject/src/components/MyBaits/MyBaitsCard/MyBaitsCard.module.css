@@ -75,8 +75,10 @@ border-radius: 50px;
 }
 .my__catches__description{
    font-size: 16px;
+   text-indent: 0px;
 }
 .my__catches__description__span{
    font-style: italic;
-   color: white;
+   font-size: 14px;
+   color: rgb(234, 16, 162);
 }
