@@ -21,7 +21,7 @@ const Details = () => {
   const { userInfo } = useAuthContext();
   const { baitId } = useParams();
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
-  const { errorNotification, notification } = useNotifyContext();
+
 
   const navigate = useNavigate();
 
@@ -45,10 +45,10 @@ const Details = () => {
   const deleteBait = () => {
     baitService
       .deleteOneBait(token, bait._id)
-      .then(() => navigate("/gallery"))
-      .catch((err) => {
-        notification(err);
-        console.log(errorNotification)})
+      .then(() => navigate("/allbaits"))
+      .finally(() => {
+    setShowDeleteDialog(false);
+});
   }
 
   const createYourComment = (e) => {

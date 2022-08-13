@@ -38,7 +38,7 @@ const PostBait = () => {
 
       .then((data) => {
         console.log(data);
-        navigate("/gallery");
+        navigate("/allbaits");
       });
   };
 
