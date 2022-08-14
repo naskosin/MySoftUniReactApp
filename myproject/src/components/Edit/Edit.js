@@ -18,8 +18,17 @@ const Edit = () => {
   const navigate = useNavigate();
   const { baitId } = useParams();
   const { userInfo } = useAuthContext();
-  const [bait, baitState] = useState({});
+  const [bait, setBait] = useState({});
   const [error, setError, isFormValid] = useHandler(initialState);
+
+  useEffect(() => {
+    baitService
+      .getOneBait(baitId)
+
+      .then((data) => {
+        setBait(data);
+      });
+  }, []);
   const editOne = (e) => {
     e.preventDefault();
     const token = userInfo.accessToken;
@@ -29,30 +38,20 @@ const Edit = () => {
     );
     let petData = { baitType, bait, img, story, weight };
     console.log(petData);
-    baitService
-      .editOneBait(token, petData, baitId)
-      .then((data) => {console.log(data);
-      
-    navigate(`/gallery/${baitId}`)});
+    baitService.editOneBait(token, petData, baitId).then((data) => {
+     
+
+      navigate(`/gallery/${baitId}`);
+    });
   };
-  useEffect(() => {
-    baitService
-      .getOneBait(baitId)
-
-      .then((data) => {
-        baitState(data);
-      });
-  }, []);
-
-  let baitd = bait._id;
 
   return (
     <div className={styles.createcontainerinfo}>
-      <img src="/assets/03.png" alt="image" />
+      <img src="/assets/03.png" alt="Catched fish" />
 
       <form className={styles.containertext} onSubmit={editOne}>
         <h2>Edit Catch</h2>
-        <p className={styles.containertext__p }>Add your bait of lifetime!</p>
+        <p className={styles.containertext__p}>Add your bait of lifetime!</p>
 
         <label htmlFor="title">Bait Type:</label>
         <input
@@ -136,7 +135,9 @@ const Edit = () => {
           ""
         )}
 
-        <label className={styles.label} htmlFor="certificate">Story:</label>
+        <label className={styles.label} htmlFor="certificate">
+          Story:
+        </label>
         <textarea
           type="text"
           placeholder="This day..."
