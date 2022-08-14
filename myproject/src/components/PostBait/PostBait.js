@@ -48,7 +48,7 @@ const PostBait = () => {
 
       <form className={styles.containertext} onSubmit={create}>
         <h2>Post Bait</h2>
-        <p className={styles.paragraph}>Add your fish of lifetime!</p>
+        <p className={styles.paragraph}>Add your favourite bait!</p>
 
         <label htmlFor="title">Bait Type:</label>
         <input

@@ -42,14 +42,14 @@ const Register = () => {
         >
           <h2>Register</h2>
           <p className={styles.paragraph}>
-            Register to get ideas and view the latest masterpieces.
+            Register to get ideas and view the latest baits.
           </p>
 
-          <label for="username">Username:</label>
+          <label for="email">Email:</label>
           <input
             type="text"
-            id="username"
-            placeholder="ivan_00"
+            id="email"
+            placeholder="ivan@abv.bg"
             name="email"
             onBlur={setError}
             className={

@@ -50,13 +50,13 @@ const Login = () => {
 
         <form onSubmit={onLogin} className={styles.containertext}>
           <h2>Login</h2>
-          <p className={styles.paragraph}>Welcome, see the new masterpieces!</p>
+          <p className={styles.paragraph}>Welcome, login to see the new baits!</p>
 
-          <label htmlFor="uses">Uses:</label>
+          <label htmlFor="uses">Email:</label>
           <input
             type="text"
             id="uses"
-            placeholder="ivan_00"
+            placeholder="ivan@abv.bg"
             name="email"
             onBlur={setError}
             className={
