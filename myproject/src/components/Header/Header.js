@@ -79,8 +79,6 @@ let loggedNavigation =
     return (<header className={styles.header}>
     <h1>Best trout baits</h1>
     {userInfo.email ? loggedNavigation : guestNavigation}
-  
-    
      
     {errorNotification ? <p className={styles.notification} >{errorNotification} </p> : ''} 
    

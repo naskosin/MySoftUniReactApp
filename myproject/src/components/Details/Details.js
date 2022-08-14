@@ -8,7 +8,6 @@ import Comment from "./Comments/Comment";
 import { useAuthContext } from "../../contexts/AuthContext";
 import { useCommentValidator } from "../../hooks/useCommentValidator";
 import ConfirmDialog from "../Common/ConfirmDialog/ConfirmDialog";
-import { useNotifyContext } from "../../contexts/NotifyContext";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./Details.module.css";
 

@@ -16,10 +16,10 @@ const AllBaits = () => {
    // }, [getAll]);
   useEffect(() => {
     baitServices.getAllBaits().then((result) => {
-      console.log(result);
       setBaits(result);
     });
   }, []);
+  
   return (
     <section className={styles.section__main}>
       <article className={styles.main}>
