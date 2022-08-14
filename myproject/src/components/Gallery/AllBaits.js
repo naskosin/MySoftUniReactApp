@@ -5,6 +5,15 @@ import * as baitServices from "../../services/baitService";
 
 const AllBaits = () => {
   const [baits, setBaits] = useState();
+// Modification for eslint array missing dependancy
+   // const getAll = useCallback(() => {
+   //   baitServices.getAllBaits().then((result) => {
+   //     setBaits(result);
+   //   });
+   // }, []);
+   // useEffect(() => {
+   //   getAll();
+   // }, [getAll]);
   useEffect(() => {
     baitServices.getAllBaits().then((result) => {
       console.log(result);

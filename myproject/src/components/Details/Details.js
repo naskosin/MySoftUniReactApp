@@ -25,22 +25,21 @@ const Details = () => {
 
   const navigate = useNavigate();
 
-  console.log(baitId);
+
 
   const token = userInfo.accessToken;
 
   const email = userInfo.email;
 
   useEffect(() => {
-    commentService.getAllComments(baitId).then((res) => {
+    commentService.getAllComments(baitId).then((data) => {
     
-
-      setComments(res);
+      setComments(data);
     });
     baitService.getOneBait(baitId).then((res) => {
       setBait(res);
     });
-  },);
+  },[]);
 
   const deleteBait = () => {
     baitService
