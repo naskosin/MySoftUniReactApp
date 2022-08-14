@@ -24,7 +24,6 @@ const Edit = () => {
   useEffect(() => {
     baitService
       .getOneBait(baitId)
-
       .then((data) => {
         setBait(data);
       });
@@ -32,13 +31,12 @@ const Edit = () => {
   const editOne = (e) => {
     e.preventDefault();
     const token = userInfo.accessToken;
-    console.log(token);
-    const { baitType, bait, img, story, weight } = Object.fromEntries(
+    const { baitType, bait, img, fish_img, story, weight } = Object.fromEntries(
       new FormData(e.currentTarget)
     );
-    let petData = { baitType, bait, img, story, weight };
+    let petData = { baitType, bait, img, fish_img, story, weight };
     console.log(petData);
-    baitService.editOneBait(token, petData, baitId).then((data) => {
+    baitService.editOneBait(token, petData, baitId).then(() => {
      
 
       navigate(`/gallery/${baitId}`);
