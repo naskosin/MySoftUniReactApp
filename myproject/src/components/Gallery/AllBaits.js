@@ -13,13 +13,13 @@ const AllBaits = () => {
    // }, []);
    // useEffect(() => {
    //   getAll();
-   // }, [getAll]);
+   // }, [getAll]); 
   useEffect(() => {
     baitServices.getAllBaits().then((result) => {
       setBaits(result);
     });
   }, []);
-  
+
   return (
     <section className={styles.section__main}>
       <article className={styles.main}>

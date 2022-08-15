@@ -27,7 +27,7 @@ const Edit = () => {
       .then((data) => {
         setBait(data);
       });
-  }, []);
+  }, [baitId]);
   const editOne = (e) => {
     e.preventDefault();
     const token = userInfo.accessToken;

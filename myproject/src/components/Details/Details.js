@@ -30,6 +30,9 @@ const Details = () => {
 
   const email = userInfo.email;
 
+
+  
+
   useEffect(() => {
     commentService.getAllComments(baitId).then((data) => {
     
@@ -38,7 +41,7 @@ const Details = () => {
     baitService.getOneBait(baitId).then((res) => {
       setBait(res);
     });
-  },[]);
+  },[baitId]);
 
   const deleteOnClick =()=>{
     setShowDeleteDialog(true)

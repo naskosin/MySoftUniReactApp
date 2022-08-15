@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer>
       <div className={styles.description}>
-        <img className={styles.footer__img} src="assets/61.jpg" alt="Baits" />
+        <img className={styles.footer__img} src="./assets/61.jpg" alt="Baits" />
         <p className={styles.description__p}>
           Spinning is one of the most widespread and popular techniques around
           the world for that can be done in both saltwater and freshwater.
