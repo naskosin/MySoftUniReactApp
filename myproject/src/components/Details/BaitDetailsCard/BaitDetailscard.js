@@ -4,14 +4,12 @@ import { Link } from 'react-router-dom';
 
 
 
-const BaitDetailsCard =({bait,  setShowDeleteDialog})=>{
+const BaitDetailsCard =({bait,  deleteClick})=>{
 const { userInfo } = useAuthContext();
 
 
 
-const deleteClick =()=>{
-  setShowDeleteDialog(true)
-}
+
  
 const ownerButtons = <div className={styles.ownerButtons}>
 <button  className={styles.edit}>

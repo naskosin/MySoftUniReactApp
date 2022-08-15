@@ -40,6 +40,9 @@ const Details = () => {
     });
   },[]);
 
+  const deleteOnClick =()=>{
+    setShowDeleteDialog(true)
+  }
   const deleteBait = () => {
     baitService
       .deleteOneBait(token, bait._id)
@@ -88,7 +91,7 @@ const Details = () => {
       {
         <BaitDetailsCard
           bait={bait}
-          setShowDeleteDialog={setShowDeleteDialog}
+          deleteClick={deleteOnClick}
         />
       }
       {comments.length > 0 ? (
