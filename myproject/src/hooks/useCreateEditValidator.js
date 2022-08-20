@@ -70,10 +70,11 @@ setError((state) => ({ ...state, fish_img: "Filled" }));
         }
       }else if (field === "weight") {
         let weight = e.currentTarget.value;
-      
+        console.log(weight)
         if (weight.length === 0) {
           setError((state) => ({ ...state, weight: "Weight required!" }));
-        }else if (!weight.match(/[1-9][0-9]*/)) {
+        }else if (!weight.match(/(^[1-9][0-9]*)/)) {
+          
           setError((state) => ({ ...state, weight: "Must be positive number!" }));
           }
         
