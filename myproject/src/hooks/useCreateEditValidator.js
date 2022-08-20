@@ -73,7 +73,11 @@ setError((state) => ({ ...state, fish_img: "Filled" }));
       
         if (weight.length === 0) {
           setError((state) => ({ ...state, weight: "Weight required!" }));
-        } else {
+        }else if (!fish_img.match(/[1-9][0-9]*/)) {
+          setError((state) => ({ ...state, weight: "Must be positive number!" }));
+          }
+        
+        else {
           setError((state) => ({ ...state, weight: "Filled" }));
       
         }
